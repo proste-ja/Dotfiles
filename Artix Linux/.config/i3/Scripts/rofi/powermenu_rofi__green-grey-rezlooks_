@@ -1,0 +1,38 @@
+#!/bin/bash
+
+export TERM=xterm
+USE_LOCKER='false'
+LOCKER='i3lock-my'
+
+OPT=$(echo -e 'Cancel\nLock\nLogout\nReboot\nPoweroff' \
+	| rofi -markup-rows -hide-scrollbar -no-fullscreen -no-custom \
+    	-location 0 -bw 2 -eh 1 \
+	-theme "$HOME/.config/rofi/themes/green-grey-rezlooks.rasi" \
+    	-font "Terminus bold 15" \
+        -theme-str '#inputbar {children: [prompt];}' \
+        -theme-str '#inputbar {padding: 0;}' \
+        -theme-str '#inputbar {border-color: #5994ad;}' \
+        -theme-str '#prompt {padding: 8px;}' \
+        -theme-str '#prompt {text-color: #5994ad;}' \
+        -theme-str '#window {x-offset: 0%; y-offset: -37.8%;}' \
+        -theme-str '#window {width: 531;}' \
+        -theme-str '#listview {padding: 12px;}' \
+        -theme-str '#listview {columns: 5;}' \
+        -theme-str '#listview {lines: 1;}' \
+        -theme-str '#element {horizontal-align: 0.55;}' \
+	-dmenu -i -p '                                   P O W E R M E N U                                  ')
+
+if [ ${#OPT} -gt 0 ]
+then
+    case $OPT in
+	Cancel) ;;
+	Lock) i3lock-my ;;
+	Logout) i3-msg exit ;;
+      	Reboot) systemctl reboot ;;
+      	Poweroff) systemctl poweroff ;;
+      	Suspend) $($USE_LOCKER) && "$LOCKER"; systemctl suspend ;;
+      	Hibernate) $($USE_LOCKER) && "$LOCKER"; systemctl hibernate ;;
+      	*) ;;
+    esac
+fi
+

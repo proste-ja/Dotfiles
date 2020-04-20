@@ -11,13 +11,17 @@ I'm just me. A girl in love with Arch, cyberpunk, metal, singing and Slovak cuva
 
 * **WM:**  i3-gaps
 
-**Panel:** polybar
 
-**Emulator:** termite
+* **Panel:** polybar 
 
-**Notify**: dunst
 
-**Running:** sys-info-full, pipes, moc, color-scheme-skull
+* **Emulator:** termite 
+
+
+* **Notify**: dunst 
+
+
+* **Running:** sys-info-full, pipes, moc, color-scheme-skull 
 
 
 # Screenshot

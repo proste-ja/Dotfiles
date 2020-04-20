@@ -1,0 +1,533 @@
+#############################################
+#				General Settings				#
+#############################################
+
+## set $mod keys
+set $mod Mod4
+set $mod1 Mod1
+
+## Font for window titles.
+font pango:monospace 8
+
+## Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+## kill focused window
+bindsym $mod+Shift+q kill
+
+## change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ocircumflex focus right
+
+## alternatively, you can use the cursor keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+## move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ocircumflex move right
+
+## alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+## split orientation
+bindsym $mod+h split h;exec notify-send 'Horizontálne rozloženie'
+bindsym $mod+v split v;exec notify-send 'Vertikálne rozloženie'
+bindsym $mod+q split toggle;exec notify-send 'Prepínač rozloženia'
+
+#x enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle global
+
+## change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+## toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+#bindsym $mod+Shift+space floating toggle, border pixel 2
+
+## change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+## focus the child container
+#bindsym $mod+d focus child
+
+## reload the configuration file
+bindsym $mod+Shift+c reload
+## restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+## exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Skutočne chceš opustiť i3? Ukončíš tak súčasné sedenie.' -b 'Áno, opustiť i3' 'i3-msg exit'"
+
+## resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym ocircumflex resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+
+#############################################
+#				Mouse bindings				#
+#############################################
+
+## The middle button and a modifer kills the window
+bindsym --whole-window $mod+button2 kill
+
+## The right button and a modifer toggles floating
+bindsym --whole-window $mod+button3 floating toggle
+
+## The mousewheel and a modifer move the window around
+bindsym --whole-window $mod1+button4 move left
+bindsym --whole-window $mod1+button5 move right
+
+## The mousewheel and a modifer resize the window
+bindsym --whole-window $mod+button4 resize grow width 5 px or 5 ppt
+bindsym --whole-window $mod+button5 resize shrink width 5 px or 5 ppt
+bindsym --whole-window $mod+Shift+button4 resize grow height 5 px or 5 ppt
+bindsym --whole-window $mod+Shift+button5 resize shrink height 5 px or 5 ppt
+
+
+
+#############################################
+#				Workspaces					#
+#############################################
+
+## workspaces from 1-10
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+## workspaces from 11-20
+bindsym $mod+Ctrl+1 workspace 11
+bindsym $mod+Ctrl+2 workspace 12
+bindsym $mod+Ctrl+3 workspace 13
+bindsym $mod+Ctrl+4 workspace 14
+bindsym $mod+Ctrl+5 workspace 15
+bindsym $mod+Ctrl+6 workspace 16
+bindsym $mod+Ctrl+7 workspace 17
+bindsym $mod+Ctrl+8 workspace 18
+bindsym $mod+Ctrl+9 workspace 19
+bindsym $mod+Ctrl+0 workspace 20
+
+## specific worskpaces
+bindsym $mod+Ctrl+h workspace $WS1
+bindsym $mod+Ctrl+m workspace $WS2
+bindsym $mod+Ctrl+n workspace $WS3
+bindsym $mod+Ctrl+p workspace $WS4
+bindsym $mod+Ctrl+i workspace $WS5
+bindsym $mod+Ctrl+b workspace $WS6
+bindsym $mod+Ctrl+o workspace $WS7
+bindsym $mod+Ctrl+v workspace $WS10
+bindsym $mod+Ctrl+s workspace $WS11
+
+## switch to workspace
+bindsym $mod1+1 workspace 1
+bindsym $mod1+2 workspace 2
+bindsym $mod1+3 workspace 3
+bindsym $mod1+4 workspace 4
+bindsym $mod1+5 workspace 5
+bindsym $mod1+6 workspace 6
+bindsym $mod1+7 workspace 7
+bindsym $mod1+8 workspace 8
+bindsym $mod1+9 workspace 9
+bindsym $mod1+10 workspace 10
+bindsym $mod1+Ctrl+1 workspace 11
+bindsym $mod1+Ctrl+2 workspace 12
+bindsym $mod1+Ctrl+3 workspace 13
+bindsym $mod1+Ctrl+4 workspace 14
+bindsym $mod1+Ctrl+5 workspace 15
+bindsym $mod1+Ctrl+6 workspace 16
+bindsym $mod1+Ctrl+7 workspace 17
+bindsym $mod1+Ctrl+8 workspace 18
+bindsym $mod1+Ctrl+9 workspace 19
+bindsym $mod1+Ctrl+0 workspace 20
+bindsym $mod1+Ctrl+h workspace $WS1
+bindsym $mod1+Ctrl+m workspace $WS2
+bindsym $mod1+Ctrl+n workspace $WS3
+bindsym $mod1+Ctrl+p workspace $WS4
+bindsym $mod1+Ctrl+i workspace $WS5
+bindsym $mod1+Ctrl+b workspace $WS6
+bindsym $mod1+Ctrl+o workspace $WS7
+bindsym $mod1+Ctrl+v workspace $WS10
+bindsym $mod1+Ctrl+s workspace $WS11
+
+## move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+10 move container to workspace 10
+bindsym $mod+Shift+Ctrl+1 move container to workspace 11
+bindsym $mod+Shift+Ctrl+2 move container to workspace 12
+bindsym $mod+Shift+Ctrl+3 move container to workspace 13
+bindsym $mod+Shift+Ctrl+4 move container to workspace 14
+bindsym $mod+Shift+Ctrl+5 move container to workspace 15
+bindsym $mod+Shift+Ctrl+6 move container to workspace 16
+bindsym $mod+Shift+Ctrl+7 move container to workspace 17
+bindsym $mod+Shift+Ctrl+8 move container to workspace 18
+bindsym $mod+Shift+Ctrl+9 move container to workspace 19
+bindsym $mod+Shift+Ctrl+10 move container to workspace 20
+bindsym $mod+Shift+Ctrl+h move container to workspace $WS1
+bindsym $mod+Shift+Ctrl+m move container to workspace $WS2
+bindsym $mod+Shift+Ctrl+n move container to workspace $WS3
+bindsym $mod+Shift+Ctrl+p move container to workspace $WS4
+bindsym $mod+Shift+Ctrl+i move container to workspace $WS5
+bindsym $mod+Shift+Ctrl+b move container to workspace $WS6
+bindsym $mod+Shift+Ctrl+o move container to workspace $WS7
+bindsym $mod+Shift+Ctrl+v move container to workspace $WS10
+bindsym $mod+Shift+Ctrl+s move container to workspace $WS11
+
+## set workspaces
+set $WS1 1:
+set $WS2 2:
+set $WS3 3:
+set $WS4 4:
+set $WS5 5:
+set $WS6 6:
+set $WS7 7:
+set $WS8 8:
+set $WS9 9:
+set $WS10 10:
+set $WS11 11:
+set $WS12 12:
+
+## navigate workspaces next / previous
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+
+#############################################
+#			PulseAudio Settings				#
+#############################################
+
+## increase sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst high && pkill -RTMIN+1 i3blocks
+
+## decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst low && pkill -RTMIN+1 i3blocks
+
+## mute sound
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst mute && pkill -RTMIN+1 i3blocks
+
+
+############################################
+# 			MOC Player Control			      #
+############################################
+
+bindsym XF86AudioPlay exec mocp --toggle-pause 
+bindsym XF86AudioStop exec mocp --stop
+bindsym XF86AudioPrev exec mocp --previous
+bindsym XF86AudioNext exec mocp --next
+bindsym XF86Back exec mocp --previous
+bindsym XF86Forward exec mocp --next
+
+
+#########################################
+#				i3bar Settings				#
+#########################################
+
+#bar {
+# 	i3bar_command i3bar -t
+#       status_command py3status -i ~/.config/i3/py3status -c ~/.config/i3/py3status.conf
+#        position          top
+#        height	19
+#        workspace_buttons yes
+#        tray_output       none
+#        strip_workspace_numbers	no
+#	separator_symbol		
+#        bindsym button2 exec $HOME/.config/i3/Scripts/rofi-my
+#        bindsym button3 exec pcmanfm
+#        font pango:Hack 9
+#        colors {
+#               background	#303d44ff
+#               statusline		#c0c5ce
+#               separator		#5994ad
+#	       focused_workspace		#5994ad	#5994ad	#303d44
+#               active_workspace		#5994ad	#5994ad	#303d44
+#               inactive_workspace		#303d44	#303d44	#5994ad
+#               urgent_workspace		#303d44	#303d44	#4f6571
+#        }
+#}
+
+
+#############################################
+#				Theme colors					#
+#############################################
+
+## class                 		border  backgr.    	text        indicator	child_border
+client.focused		#253035	#253035	#c0c5ce	#253035	#253035
+client.focused_inactive	#253035	#253035	#c0c5ce	#253035	#253035
+client.unfocused		#303d44	#303d44	#c0c5ce	#303d44	#303d44
+client.urgent 			#5994ad	#5994ad	#c0c5ce	#5994ad	#5994ad
+client.placeholder      	#303d44	#303d44	#c0c5ce	#303d44	#303d44
+client.background		#4f6571
+
+
+#############################################
+#				Gaps Settings					#
+#############################################
+
+## Window borders and gaps
+for_window [class="^.*"] border pixel 2
+new_window pixel 2
+new_float pixel 2
+hide_edge_borders	smart
+smart_borders	on
+gaps inner 6
+gaps outer 0
+font pango:Source Code Pro 12
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+#############################################
+#		Shutdown & Reboot & Logout			#
+#############################################
+
+set $powermenu (L)ock, (E)xit, (R)eboot, (P)oweroff
+bindsym $mod+Delete mode "$powermenu"
+
+mode "$powermenu" {
+    bindsym l exec --no-startup-id i3lock-my, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id reboot, mode "default"
+    bindsym p exec --no-startup-id poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+
+#############################################
+#			Autostart Applications				#
+#############################################
+
+exec_always --no-startup-id ~/.config/polybar/launch
+exec --no-startup-id i3-msg 'workspace $WS1'
+exec --no-startup-id feh --bg-fill --no-xinerama ~/Obrázky/wallpaper.png
+#exec --no-startup-id "sh -c 'sleep 11; ~/.config/i3/Scripts/update_dunst'"
+#exec --no-startup-id ~/.config/i3/Scripts/scripts/update_dunst
+
+
+#############################################
+#		Applications & Specific workspaces		#
+#############################################
+
+assign [class="^Termite$" title="^neomutt$"] $WS2
+assign [class="^Termite$" title="^newsboat$"] $WS3
+assign [class="^Termite$" title="^mocp$"] $WS4
+assign [class="^Firefox$"] $WS5
+assign [class="^Nightly$"] $WS5
+assign [class="^Chromium$"] $WS5
+assign [class="^Brave-browser$"] $WS5
+assign [class="^Tixati$"] $WS6
+assign [class="^cz-vity-freerapid-core-MainApp$"] $WS6
+assign [class="^JDownloader$"] $WS6
+assign [class="^Wps$"] $WS7
+assign [class="^Et$"] $WS7
+assign [class="^Wpp$"] $WS7
+assign [class="^DesktopEditors$"] $WS7
+assign [class="Gimp" window_role = "gimp-image-window"] $WS8
+assign [class="Gimp" window_role = "gimp-preferences"] $WS8
+assign [class="Gimp" window_role="gimp-toolbox"] $WS9
+assign [class="Gimp" window_role="gimp-dock"] $WS9
+assign [class="^Termite$" title="^htop$"] $WS11
+assign [class="^Termite$" title="^pacui$"] $WS11
+assign [class="^Simple-scan$"] $WS11
+assign [class="^Ghb$"] $WS11
+assign [class="^etcher-electron$"] $WS11
+assign [class="^Etcher-electron$"] $WS11
+
+
+#############################################
+#				Other keybinds				#
+#############################################
+
+#bindsym $mod+Return exec exo-open --launch TerminalEmulator
+bindsym $mod+Return exec termite
+#bindsym $mod+BackSpace exec exo-open --launch FileManager
+bindsym $mod+BackSpace exec pcmanfm
+bindsym $mod1+BackSpace exec thunar
+bindsym $mod+d exec "$HOME/.config/i3/Scripts/rofi-my"
+#bindsym $mod1+d exec "$HOME/.config/i3/Scripts/scripts/morc_menu"
+#bindsym $mod1+f exec "$HOME/.config/i3/Scripts/rofi/search_rofi"
+bindsym $mod+m exec "$HOME/.config/i3/Scripts/neomutt-my"
+bindsym $mod+n exec "$HOME/.config/i3/Scripts/newsboat-my"
+bindsym $mod+p exec "$HOME/.config/i3/Scripts/mocp-my"
+bindsym $mod+i exec firefox
+bindsym $mod1+i exec brave-nightly
+#bindsym $mod+Shift+i exec palemoon
+#bindsym $mod1+Shift+i exec brave
+bindsym $mod+b exec tixati
+bindsym $mod1+b exec freerapid
+bindsym $mod1+Shift+b exec JDownloader2
+bindsym $mod+Shift+s exec mate-search-tool
+bindsym Print exec flameshot-gui
+bindsym $mod+Print exec mate-screenshot --interactive
+bindsym $mod+Ctrl+Print exec "scrot -u -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka okna vytvorená'"
+bindsym $mod+Shift+Print exec "scrot -d 5 -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka plochy vytvorená'"
+#bindsym $mod+Alt+Print exec "$HOME/.config/i3/Scripts/scripts/screenie"
+bindsym $mod1+w exec feh --bg-fill --no-xinerama ~/Obrázky/wallpaper.png
+bindsym $mod1+l exec "$HOME/.config/i3/Scripts/i3lock-my"
+bindsym $mod1+Delete exec "$HOME/.config/i3/Scripts/scripts/powermenu_rofi"
+bindsym $mod1+s exec "$HOME/.config/i3/Scripts/sysinfofull-my"
+bindsym $mod1+Shift+s exec "$HOME/.config/i3/Scripts/sysinfo-my"
+#bindsym $mod1+p exec "$HOME/.config/i3/Scripts/weather-my"
+#bindsym $mod1+Shift+p exec "$HOME/.config/i3/Scripts/weather1-my"
+bindsym $mod1+c exec "$HOME/.config/i3/Scripts/colors-my"
+bindsym $mod1+Shift+c exec "$HOME/.config/i3/Scripts/colorsskull-my"
+#bindsym $mod+x exec "xrandr --output HDMI-0 --mode 1920x1080 --rate 60.05 --output DVI-I-1 --mode 1366x768 --rate 59.79 --left-of HDMI-0 && nitrogen --restore; exec notify-send 'Sekundárny monitor pripojený'"
+#bindsym $mod1+x exec "xrandr  --output HDMI-0 --off --output DVI-I-1 --auto; exec notify-send 'Sekundárny monitor odpojený'"
+bindsym $mod1+Ctrl+d --release exec "killall dunst; exec notify-send 'Dunst reštartovaný'"
+bindsym $mod+Shift+d exec "gvfs-trash --empty; exec notify-send 'Kôš vyprázdnený'"
+bindsym $mod1+Shift+d exec "gvfs-trash $HOME/.cache/watch_later; exec notify-send 'História mpv odstránená'"
+
+## Multimedia keys
+bindsym XF86Mail exec "$HOME/.config/i3/Scripts/neomutt-my"
+bindsym XF86HomePage exec "$HOME/.config/i3/Scripts/newsboat-my"
+bindsym XF86Tools exec "$HOME/.config/i3/Scripts/mocp-my"
+bindsym XF86Search exec firefox
+
+
+#############################################
+#					Floating					#
+#############################################
+
+for_window [class="Pinentry"] floating enable
+for_window [class="Yad"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="BleachBit"] floating enable
+for_window [class="mpv"] floating enable, border none
+for_window [class="smplayer"] floating enable, border none
+for_window [class ="Firefox" instance="Navigator"] floating disable
+for_window [class ="Firefox" instance="Places"] floating enable
+for_window [class ="Nightly" instance="Toplevel"] floating disable
+for_window [class ="Nightly" title="Knižnica"] floating enable
+for_window [class ="Nightly" instance="Navigator"] floating disable
+for_window [class ="Pale moon" instance="Navigator"] floating disable
+for_window [class ="Pale moon" instance="Places"] floating enable
+for_window [class="Viewnior"] floating enable
+for_window [class="Evince"] floating enable
+for_window [instance="cz-vity-freerapid-core-MainApp"] floating disable
+for_window [instance="sun-awt-X11-XDialogPeer"] floating enable
+for_window [instance="sun-awt-X11-XDialogPeer"] floating disable
+for_window [class="Gimp" window_role = "gimp-dock"] floating disable
+for_window [class="Gimp" window_role = "gimp-toolbox"] floating disable
+for_window [class="Gimp" window_role = "gimp-toolbox-color-dialog"] floating enable
+
+
+#############################################
+#	Resize & Position & Move to worspace		#
+#############################################
+
+for_window [class="Viewnior"] resize set 1280 720
+for_window [class="Viewnior"] move absolute position 50 25
+for_window [class="Evince"] resize set 1150 700
+for_window [class="Evince"] move absolute position 10 25
+for_window [class="BleachBit"] resize set 850 550
+for_window [class="BleachBit"] move absolute position 250 250
+for_window [class="Pavucontrol"] resize set 850 550
+for_window [class="Pavucontrol"] move absolute position 250 100
+for_window [class="smplayer"] resize set 1150 700
+for_window [class="smplayer"] move absolute position 250 100
+for_window [class ="Firefox" instance="Places"] resize set 1024 600
+for_window [class ="Firefox" instance="Places"] move absolute position 135 100
+for_window [class ="Nightly" title="Knižnica"] resize set 1024 600
+for_window [class ="Nightly" title="Knižnica"] move absolute position 135 100
+for_window [class ="Pale moon" instance="Places"] resize set 1024 600
+for_window [class ="Pale moon" instance="Places"] move absolute position 135 100
+for_window [class="Gimp" window_role = "gimp-file-open"] resize set 1024 600
+for_window [class="Gimp" window_role = "gimp-file-open"] move absolute position 135 100
+for_window [class="Gimp" window_role = "gimp-file-save"] resize set 1024 600
+for_window [class="Gimp" window_role = "gimp-file-save"] move absolute position 135 100
+for_window [class="Gimp" window_role = "gimp-file-export"] resize set 1024 600
+for_window [class="Gimp" window_role = "gimp-file-export"] move absolute position 135 100
+for_window [class="Gimp" window_role = "gimp-toolbox-color-dialog"] resize set 600 400
+for_window [class="Gimp" window_role = "gimp-toolbox-color-dialog"] move absolute position 135 100
+for_window [window_role = "GtkFileChooserDialog"] resize set 1024 600
+for_window [window_role = "GtkFileChooserDialog"] move absolute position 135 100
+

@@ -1,0 +1,25 @@
+#! /bin/sh
+
+export TERM=xterm
+
+OPT=$(echo -e "Zrušiť\nPredchádzajúca\nPozastaviť/Prehrať\nNasledujúca" \
+	| rofi -markup-rows -hide-scrollbar -no-fullscreen -no-custom -lines 4 \
+	-font 'Terminus bold 12' \
+	-theme "$HOME/.config/rofi/themes/green-grey-blue-theme.rasi" \
+        -theme-str '#inputbar {children: [prompt];}' \
+        -theme-str '#inputbar {padding: 0.4em;}' \
+        -theme-str '#listview {padding: 14 7 7 7;}' \
+        -theme-str '#window {x-offset: 2.2%; y-offset: -35.9%;}' \
+        -theme-str '#window {width: 189;}' \
+	-dmenu -p 'Kontrola prehrávania')
+
+if [ ${#OPT} -gt 0 ]
+then
+    case $OPT in
+        Zrušiť) ;;
+	Predchádzajúca) mocp -r ;;
+	Pozastaviť/Prehrať) mocp -G ;;
+	Nasledujúca) mocp -f ;;
+	*) ;;
+    esac
+fi

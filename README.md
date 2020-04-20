@@ -5,17 +5,17 @@ I'm just me. A girl in love with Arch, cyberpunk, metal, singing and Slovak cuva
 
 # Sytem informations
 
-Distro: Artix Linux
+**Distro:** Artix Linux
 
-WM: i3-gaps
+**WM:** i3-gaps
 
-Panel: polybar
+**Panel:** polybar
 
-Emulator: termite
+**Emulator:** termite
 
-Notify: dunst
+**Notify**: dunst
 
-Running: sys-info-full, pipes, moc, color-scheme-skull
+**Running:** sys-info-full, pipes, moc, color-scheme-skull
 
 
 # Screenshot

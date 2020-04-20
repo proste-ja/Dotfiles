@@ -1,0 +1,24 @@
+#! /bin/sh
+
+today=$(date '+%A, %d %b %Y')
+
+export TERM=xterm
+cal --color=always \
+    | sed 's/\x1b\[[7;]*m/\<b\>\<u\>/g' \
+    | sed 's/\x1b\[[27;]*m/\<\/u\>\<\/b\>/g' \
+    | rofi -dmenu -p "  $today " \
+        -markup-rows -no-fullscreen -hide-scrollbar -lines 7 \
+	-font 'Terminus 13' \
+	-theme "$HOME/.config/rofi/themes/green-grey-rezlooks.rasi" \
+        -theme-str '#inputbar {children: [prompt];}' \
+        -theme-str '#inputbar {padding: 0;}' \
+        -theme-str '#inputbar {border-color: #5994ad;}' \
+        -theme-str '#prompt {padding: 8px;}' \
+        -theme-str '#prompt {text-color: #5994ad;}' \
+        -theme-str '#listview {padding: 16 8 8 8;}' \
+        -theme-str '#element {text-color: #5994ad;}' \
+        -theme-str '#element.selected {background-color: #3b4a53;}' \
+        -theme-str '#element.selected {text-color: #303d44;}' \
+        -theme-str '#window {x-offset: 41.2%; y-offset: -27.8%;}' \
+        -theme-str '#window {width: 223;}'
+

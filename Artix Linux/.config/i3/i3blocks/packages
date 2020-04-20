@@ -1,0 +1,4 @@
+#!/bin/sh
+
+packages=$(pacman -Q | wc -l)
+ echo "${packages}"

@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+BAR_ICON=""
+NOTIFY_ICON="  "
+CHECK="✓"
+UNCHECK="✗"
+
+get_total_updates() { UPDATES=$(checkupdates 2>/dev/null | wc -l); }
+
+while true; do
+    get_total_updates
+
+    # upozornenie o aktualizáciách
+    if hash notify-send &>/dev/null; then
+        if (( UPDATES > 50 )); then
+            notify-send -u critical -i $NOTIFY_ICON \
+                "Už by sa patrilo aktualizovať!!" "$UPDATES Nových balíčkov"
+        elif (( UPDATES > 25 )); then
+            notify-send -u normal -i $NOTIFY_ICON \
+                "Aktualizácie čakajú." "$UPDATES Nových balíčkov"
+        elif (( UPDATES > 4 )); then
+            notify-send -u low -i $NOTIFY_ICON \
+                "$UPDATES Nové balíčky"
+        fi
+    fi
+
+    # keď sú dostupné aktualizácie
+    # každé 3 hodiny kontrola
+    while (( UPDATES > 0 )); do
+        if (( UPDATES == 1 )); then
+            echo " $UPDATES Aktualizácia"
+        elif (( UPDATES <= 4 )); then
+            echo " $UPDATES Aktualizácie"
+        elif (( UPDATES > 4 )); then
+            echo " $UPDATES Aktualizácií"
+        else
+            echo $BAR_ICON $UNCHECK
+        fi
+        sleep 10800
+        get_total_updates
+    done
+
+    # keď nie sú dlhšie dostupné aktuálizácie
+    # každé tri hodiny kontrola
+    while (( UPDATES == 0 )); do
+        echo $BAR_ICON $CHECK
+        sleep 10800
+        get_total_updates
+    done
+done

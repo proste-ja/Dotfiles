@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+termite --config=$HOME/.config/termite/config-apps \
+	--title=mocp \
+	--exec="env TERM=xterm-256color mocp"

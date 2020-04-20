@@ -1,0 +1,41 @@
+#!/bin/bash
+
+export TERM=xterm
+USE_LOCKER='false'
+LOCKER='i3lock-my'
+
+OPT=$(echo -e '✘  Cancel\n  Lock\n  Logout\n  Reboot\n  Poweroff' \
+	| rofi -markup-rows -hide-scrollbar -no-fullscreen -no-custom \
+    	-location 0 -bw 2 -eh 1 \
+	-theme "$HOME/.config/polybar/themes/green-grey-blue-theme.rasi" \
+	-theme-str '#window {border: 4px;}' \
+        -theme-str '#window {border-color: @back;}' \
+        -theme-str '#wrapper-mode-switcher {enabled: false;}' \
+        -theme-str '#inputbar {enabled: false;}' \
+        -theme-str '#inputbar {children: [prompt];}' \
+        -theme-str '#inputbar {padding: 0px;}' \
+        -theme-str '#window {x-offset: 0%; y-offset: -35%;}' \
+        -theme-str '#window {width: 150;}' \
+        -theme-str '#listview {padding: 10;}' \
+        -theme-str '#listview {columns: 1;}' \
+        -theme-str '#listview {lines: 5;}' \
+        -theme-str '#listview {border: 3px;}' \
+        -theme-str '#listview {border-color: @text;}' \
+	-theme-str '#element {padding: 5 0 5 0;}' \
+        -theme-str '#element.selected {text-color: @white;}' \
+	-dmenu -i -p '                    Powermenu')
+
+if [ ${#OPT} -gt 0 ]
+then
+    case $OPT in
+	*Cancel) ;;
+	*Lock) i3lock-my ;;
+	*Logout) i3-msg exit ;;
+      	*Reboot) reboot ;;
+      	*Poweroff) poweroff ;;
+      	*Suspend) $($USE_LOCKER) && "$LOCKER"; suspend ;;
+      	*Hibernate) $($USE_LOCKER) && "$LOCKER"; hibernate ;;
+      	*) ;;
+    esac
+fi
+

@@ -25,3 +25,5 @@ I'm just me. A girl in love with Arch, cyberpunk, metal, singing and Slovak cuva
 
 
 # Screenshot
+
+![](Screenshots/polybar-parallel.png)

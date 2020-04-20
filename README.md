@@ -5,9 +5,11 @@ I'm just me. A girl in love with Arch, cyberpunk, metal, singing and Slovak cuva
 
 # Sytem informations
 
-**Distro:** Artix Linux
 
-**WM:** i3-gaps
+* **Distro:**  Artix Linux
+
+
+* **WM:**  i3-gaps
 
 **Panel:** polybar
 

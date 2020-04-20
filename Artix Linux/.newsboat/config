@@ -1,0 +1,86 @@
+#######################################
+###		Newsboat config file		###
+#######################################
+
+
+#########################
+#	General settings		#
+#########################
+always-display-description yes
+refresh-on-startup yes
+auto-reload yes 
+reload-time 180
+reload-threads 3
+history-limit 200
+max-items 200
+keep-articles-days 200
+goto-first-unread yes
+goto-next-feed yes
+show-read-feeds yes
+text-width 80
+max-downloads 1
+save-path "$HOME/Stiahnuté"
+download-path "$HOME/Stiahnuté"
+#notify-format "%d %n %f"
+#notify-program "~/.newsboat/newsboat-notify"
+#user-agent "Liferea/1.10.19 (Linux; sk_SK.UTF8; https://lzone.de/liferea/)"
+#"exec:ssh work curl http://changelog.worknet/rss.xml"
+
+
+#########################
+#	External commands	#
+#########################
+#browser "xdg-open %u"
+browser "firefox"
+player "mpv"
+external-url-viewer "urlscan"
+
+
+#########################
+#	Output formats		#
+#########################
+feedlist-title-format "%N %V *** Odoberania (%u neprečítaných, %t spolu)%?T? *** tag ‘%T’&?"
+articlelist-title-format "%N %V *** Články v '%T' (%u neprečítaných, %t spolu) *** %U"
+itemview-title-format "%N %V *** Článok v '%T' (%u neprečítaných, %t spolu)"
+urlview-title-format "%N %V *** Odkazy"
+selecttag-title-format "%N %V *** Tagy"
+selectfilter-title-format "%N %V *** Filtre"
+searchresult-title-format "%N %V *** Výsledok hľadania (%u neprečítaných, %t splou)"
+filebrowser-title-format "%N %V *** %?O?Otvoriť alebo uložiť? *** %f"
+help-title-format "%N %V *** Pomoc"
+dialogs-title-format "%N %V *** Dialógové okná"
+
+
+#########################
+#		Default theme	#
+#########################
+color background 			color255		default
+color listnormal 			color255		default
+color listfocus            		color229		default
+color listnormal_unread	color138		default
+color listfocus_unread     	color75 		default
+color info                 		color65 		color237 	bold
+color article              		color255 	default
+
+##highlight article "^(Kanál|Titulok|Odkaz|Dátum|Autor):.*$"	color38 default bold 
+highlight feedlist    "^  *[0-9]+  *N  " 		color166 	default
+highlight feedlist 	"^─.*$" 				color166 	default
+highlight articlelist "^  *[0-9]+  *N  "		color166 	default
+highlight article "(^Kanál:.*)"		color81	default	bold
+highlight article "(^Titulok:.*)" 		color38	default	bold
+highlight article "(^Autor:.*)"		color31	default	bold
+highlight article "(^Dátum:.*)"		color94 	default	bold
+highlight article "(^Statistiky:.*)"		color1	default 	bold
+highlight article "(^Odkaz:.*)"		color30	default	bold
+highlight article "(^Odkazy:.*)"		color30 	default 	bold
+highlight article "(^Podcast Download URL:.*)"	color30	default	bold
+highlight article "\\[[0-9][0-9]*\\]" 				color116	default	bold
+highlight article "\\[obrázok [0-9][0-9]*\\]" 		color175	default	bold
+highlight article ":.*\\(odkaz\\)$"				color30	default
+highlight article ":.*\\(obrázok\\)$"			color175	default	bold
+highlight article ":.*\\(embedded flash\\)$"		color230	default	bold
+highlight article "\\(typ:.*\\)"					color146	default 	bold
+highlight article "https?://[^ ]+" 				color150	default	protect	bold
+highlight article "http?://[^ ]+" 				color150 default	protect	bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]"		color230	default	bold
+

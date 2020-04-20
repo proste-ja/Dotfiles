@@ -226,6 +226,6 @@ unsetopt ALL_EXPORT
 ####################
 #[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
 #neofetch
-$HOME/.config/i3/Scripts/scripts/al-info
+$HOME/.config/i3/Scripts/scripts/ufetch-artix
 
 

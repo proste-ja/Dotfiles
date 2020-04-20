@@ -1,0 +1,10 @@
+#!/bin/sh
+
+date=$(date +'%a %d.%m.%Y')
+time=$(date +'%H:%M')
+   echo "${time}"
+
+case $BLOCK_BUTTON in
+    1) $HOME/.config/i3/Scripts/rofi/calendar_rofi & ;;
+esac
+exit 0

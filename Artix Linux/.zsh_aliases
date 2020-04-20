@@ -1,0 +1,90 @@
+######################
+##		Aliases		##
+######################
+alias ls='ls -1 --color=auto'
+alias ls1='ls -1'
+alias lsh='ls -AX'
+alias lsd='ls -AXg'
+alias lsf='ls -AX | grep -i'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep –color=auto'
+alias diff='diff --color=auto'
+
+alias q='exit'
+alias c='clear'
+alias root='sudo -i'
+alias df='df -h'
+alias rm='rm -i'
+alias rmf='rm -rf'
+alias cp='cp -iR'
+alias mv='mv -i'
+alias cat='ccat'
+alias md='mkdir'
+alias rd='rmdir'
+alias h='history | grep'
+alias f='find . | grep'
+alias p='ps aux | grep'
+alias o='xdg-open'
+alias fzfs='~/.config/i3/Scripts/fzf-my'
+alias path='echo -e ${PATH//:/\\n}'
+
+alias nano='nano -wtLOW -$'
+alias gkg='gksu dbus-launch gedit'
+alias sudog='sudo dbus-launch gedit'
+
+alias ro='sudo pacman -Rns $(pacman -Qtdq)'
+alias ru='sudo paccache -ruk0'
+alias rua='paccache --cachedir ~/.cache/pikaur/pkg -ruk0'
+alias cc='sudo paccache -r'
+alias cca='paccache --cachedir ~/.cache/pikaur/pkg -rk1'
+alias ccs='ccache -s'
+
+alias s='sudo pacman -S'
+alias r='sudo pacman -Rns'
+alias u='sudo pacman -U'
+alias ss='pacman -Ss'
+alias qi='pacman -Qi'
+alias si='pacman -Si'
+alias syy='sudo pacman -Syy'
+alias syu='sudo pacman -Syu'
+alias syyu='sudo pacman -Syyu'
+alias sc='sudo pacman -Sc'
+alias scc='sudo pacman -Scc'
+alias pacui='~/.config/i3/Scripts/pacui-my'
+alias pkg='~/.config/i3/Scripts/scripts/pkgsearch'
+alias sizes='~/.config/i3/Scripts/scripts/sizes'
+
+alias pikaur='pikaur'
+alias sa='pikaur -S'
+alias pss='pikaur -Ss'
+alias ass='pikaur -Ss --aur'
+alias rss='pikaur -Ss --repo'
+alias pyu='pikaur -Syu'
+alias pyyu='pikaur -Syyu'
+alias aps='pikaur -Qm'
+alias rps='pikaur -Qn'
+alias psi='pikaur -Si'
+alias pqi='pikaur -Qi'
+alias ap='pikaur -Qu 2&> /dev/null | cut -d " " -f1 | wc -l'
+alias apr='pikaur -Qur 2&> /dev/null | cut -d " " -f1 | wc -l'
+alias apa='pikaur -Qua 2&> /dev/null | cut -d " " -f1 | wc -l'
+
+
+function wet() {
+    clear
+    curl "sk.wttr.in/Bratislava?F"
+}
+
+function wet1() {
+    clear
+    curl "sk.wttr.in/Bratislava?1F"
+}
+
+function covid() {
+    clear
+    curl "https://trackercli.com/sk"
+    print
+    curl "https://corona-stats.online/SK"
+}
+

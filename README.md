@@ -1,2 +1,1 @@
-‹_W¬"hξ²Ω«–)εΆχ°Ψ@­Θ\Ι·«¦ιδ™λZ–Θ§‚)ΰjwR–‹Ϊ‘Λ―iΔ²²Χ¦wθ®f­‰ΓΛk 
-ν‹βμV2-ΰj›jw¥¦‰rmªΔιZ¶νzΉΆµγh¶'ςvιμµ§)ΰ³+"ϊΊYi—¬‡ΆZ+±Θ^™λ$ΊYRr·Θhµ'+yιμ†‹lώ%Ι¶«¥ªΪ–W¥¦x
+I'm just me. A girl in love with Arch, cyberpunk, metal, singing and Slovak cuvac.

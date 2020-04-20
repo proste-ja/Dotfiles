@@ -1,0 +1,19 @@
+#!/bin/bash
+
+STATUS=$(mocp -i | grep "State:" | sed -e "s/^.*: //")
+TITLE=$(mocp -i | grep "^Title:" | sed -e "s/^.*: //")
+ARTIST=$(mocp -i | grep "Artist:" | sed -e "s/^.*: //")
+SONGTITLE=$(mocp -i | grep "SongTitle:" | sed -e "s/^.*: //")
+
+if [[ $STATUS == PLAY ]]; then
+      echo -e ""
+fi
+
+if [[ $STATUS == PAUSE ]]; then
+      echo -e ""
+fi
+
+if [[ ! -z $(pidof mocp) ]] &>/dev/null 2>&1; then
+  echo -e " "
+else echo -e " "
+fi

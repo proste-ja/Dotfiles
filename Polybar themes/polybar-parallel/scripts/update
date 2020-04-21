@@ -1,3 +1,0 @@
-#!/bin/bash
-
-termite -e "pikaur --noconfirm -Syyu"

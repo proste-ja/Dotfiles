@@ -1,0 +1,17 @@
+#!/bin/bash
+
+volume=$(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }')
+muted=$(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $4 }')
+
+if [[ $muted == off ]]; then
+      echo -e "stlmené"
+fi
+
+echo -e "$volume"
+
+case $BLOCK_BUTTON in
+  1) amixer -q -D pulse sset $SCONTROL toggle ;;  # left click, mute/unmute
+#  2) $HOME/.config/i3/Scripts/mocp_rofi ;; # middle click
+  4) amixer -q -D pulse sset $SCONTROL ${STEP}+ unmute ;; # scroll up, increase
+  5) amixer -q -D pulse sset $SCONTROL ${STEP}- unmute ;; # scroll down, decrease
+esac

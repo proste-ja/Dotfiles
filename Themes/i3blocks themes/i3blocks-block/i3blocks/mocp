@@ -1,0 +1,44 @@
+#!/bin/bash
+
+STATUS=$(mocp -i | grep "State:" | sed -e "s/^.*: //")
+TITLE=$(mocp -i | grep "^Title:" | sed -e "s/^.*: //")
+ARTIST=$(mocp -i | grep "Artist:" | sed -e "s/^.*: //")
+SONGTITLE=$(mocp -i | grep "SongTitle:" | sed -e "s/^.*: //")
+MAX=40
+LENGHT="$(echo "$SONGTITLE" | wc -c)"
+offset="$MAX"
+let offset=offset-3
+
+if [[ "$LENGHT" -gt "$MAX" ]]; then
+  SONGTITLE_SHORT="$(echo $SONGTITLE | cut -b 1-${offset})..."
+  SONGTITLE="${SONGTITLE_SHORT}"
+fi
+
+#if [[ $STATUS == PLAY ]]; then
+#  if [[ $TITLE != "" ]]; then
+#    if [[ $ARTIST != "" ]]; then ARTIST="$ARTIST -"; fi
+#      echo -e "         $ARTIST $SONGTITLE"
+#    else echo -e "         Prehráva sa"
+#   fi
+#fi
+
+if [[ $STATUS == PLAY ]]; then
+      echo -e "         Prehráva sa"
+fi
+
+if [[ $STATUS == PAUSE ]]; then
+      echo -e "         Pozastavené"
+fi
+
+case $BLOCK_BUTTON in
+    1) mocp -f ;; # left click = next song
+    2) mocp -G ;; # middle click = toggle pause - play
+    3) mocp -r ;; # right click = previous song
+esac
+exit 0
+
+if [[ ! -z $(pidof mocp) ]] &>/dev/null 2>&1; then
+  echo -e " "
+else echo -e " "
+fi
+

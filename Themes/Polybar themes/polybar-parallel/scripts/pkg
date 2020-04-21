@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+termite -e "$HOME/.config/polybar/scripts/pkgsearch"

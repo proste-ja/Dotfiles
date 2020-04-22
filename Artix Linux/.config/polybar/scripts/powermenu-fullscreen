@@ -32,11 +32,11 @@ OPT=$(echo -e '✘\n\n\n\n' \
 if [ ${#OPT} -gt 0 ]
 then
     case $OPT in
-	*Cancel) ;;
-	*Lock) i3lock-my ;;
-	*Logout) i3-msg exit ;;
-      	*Reboot) reboot ;;
-      	*Poweroff) poweroff ;;
+	*✘) ;;
+	*) i3lock-my ;;
+	*) i3-msg exit ;;
+      	*) reboot ;;
+      	*) poweroff ;;
       	*Suspend) $($USE_LOCKER) && "$LOCKER"; suspend ;;
       	*Hibernate) $($USE_LOCKER) && "$LOCKER"; hibernate ;;
       	*) ;;

@@ -445,14 +445,14 @@ bindsym $mod+b exec tixati
 bindsym $mod1+b exec freerapid
 bindsym $mod1+Shift+b exec JDownloader2
 bindsym $mod+Shift+s exec mate-search-tool
-bindsym Print exec flameshot-gui
-bindsym $mod+Print exec mate-screenshot --interactive
+bindsym Print exec "$HOME/.config/i3/Scripts/scripts/screenshots-border"
+bindsym $mod+Print exec flameshot gui
 bindsym $mod+Ctrl+Print exec "scrot -u -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka okna vytvorená'"
 bindsym $mod+Shift+Print exec "scrot -d 5 -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka plochy vytvorená'"
 #bindsym $mod+Alt+Print exec "$HOME/.config/i3/Scripts/scripts/screenie"
 bindsym $mod1+w exec feh --bg-fill --no-xinerama ~/Obrázky/wallpaper.png
 bindsym $mod1+l exec "$HOME/.config/i3/Scripts/i3lock-my"
-bindsym $mod1+Delete exec "$HOME/.config/i3/Scripts/scripts/powermenu_rofi"
+bindsym $mod1+Delete exec "$HOME/.config/i3/Scripts/scripts/powermenu-nofullscreen-border"
 bindsym $mod1+s exec "$HOME/.config/i3/Scripts/sysinfofull-my"
 bindsym $mod1+Shift+s exec "$HOME/.config/i3/Scripts/sysinfo-my"
 #bindsym $mod1+p exec "$HOME/.config/i3/Scripts/weather-my"

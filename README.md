@@ -1,6 +1,7 @@
 # Dotfiles
 
 I'm just me. A girl in love with Arch, cyberpunk, metal, singing and Slovak cuvac.
+Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovenských čuvačov.
 
 
 # System informations

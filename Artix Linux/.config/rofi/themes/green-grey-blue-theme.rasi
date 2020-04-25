@@ -1,0 +1,165 @@
+/**
+ * ROFI Color theme
+ * User: lombardo1981
+ * Copyright: Dave Davenport
+ */
+
+configuration {
+
+    display-ssh:			"";
+    display-run:			"";
+    display-drun:			"";
+    display-window:		"";
+    display-windowcd:		"";
+    display-calc:			"";
+    display-keys:			"";
+    display-combi:			"";
+    show-icons: true;
+}
+
+* {
+    back: #303d44;
+    fore: #3b4a53;
+    text: #4f6571;
+    blue:  #5994ad;
+    red:  #993a3b;
+    green: #9bb26a;
+    magenta: #b485aa;
+    cyan: #86beb4;
+    orange: #d28445;
+    white: #c0c5ce;
+    black: #606060;
+    spacing: 0em;
+    background-color: #00000000;
+    border-color: @blue;
+    font: "Iosevka Nerd Font 11";
+}
+
+#window {
+    location: center;
+    anchor:   center;
+    orientation: horizontal;
+    transparency: "screenshot";
+    x-offset: -6%;
+    y-offset: -5%;
+    background-color: #00000000;
+    border: 0px;
+    padding: 0em;
+    width: 470;
+    children:  [vertbox, mainbox];
+}
+#mainbox {
+    spacing: 0.2em;
+    padding: 0px;
+    border: 0px;
+    children: [inputbar, message, listview];
+}
+#vertbox {
+    expand: false;
+    children: [ dummy0, wrapper-mode-switcher, dummy1 ];
+}
+#dummy0,  dummy1 {
+    expand: true;
+}
+wrapper-mode-switcher {
+    orientation: vertical;
+    expand:     false;
+    spacing:    0;
+    children: [ mode-switcher ];
+}
+#mode-switcher {
+    index: 10;
+    orientation: vertical;
+    spacing: 0;
+    expand: false;
+    padding: 0.35em;
+    border: 2px 0px 2px 2px;
+    border-color: @blue;
+    border-radius: 4px 0px 0px 4px;
+    background-color: @back;
+}
+#button {
+    font: "Iosevka Nerd Font bold 15";
+    padding: 0.35em;
+    background-color: @back;
+    text-color: @fore;
+}
+#button.selected {
+    background-color: @back;
+    text-color: @blue;
+}
+
+#message {
+    spacing: 0.2em;
+    border: 2px; 
+    padding: 1em; 
+    background-color: @back;
+    text-color: @magenta;
+    border-color: @magenta;
+}
+#textbox normal {
+    text-color: @magenta;
+}
+
+#listview {
+    reverse: false;
+    dynamic: true;
+    fixed-height: true;
+    border: 2px;
+    padding: 1em;
+    background-color: @back; 
+    text-color: @blue;
+}
+#element {
+    border: 0px;
+    padding: 5 10 5;
+    text-color: @text;
+    highlight: bold;
+}
+#element.selected {
+    text-color: @blue;
+    background-color: @fore;
+}
+
+#scrollbar {
+    border: 0em;
+    padding: 0em;
+}
+
+#inputbar {
+    index: 0;
+    spacing: 0em;
+    border: 2px;
+    padding: 0.5em 0.5em;
+    background-color: @back;
+    border-color: @green;
+    text-color: @green;
+}
+#inputbar normal {
+    foreground-color: @back;
+    background-color: @green;
+}
+#prompt {
+    spacing: 0em;
+    padding: 0em 0em 0em 0.5em;
+    text-color: @green;
+}
+#entry {
+    spacing: 0em;
+    text-color: @green;
+}
+#case-indicator {
+    foreground-color: @back;
+    background-color: @back;
+}
+#textbox-prompt-colon {
+    expand: false;
+    str: ">>";
+    margin: 0em 0.5em 0em 0.5em ;
+    text-color: @green;
+}
+#inputbar {
+    children:   [prompt,textbox-prompt-colon,entry,case-indicator];
+}
+
+// vim: ft=css

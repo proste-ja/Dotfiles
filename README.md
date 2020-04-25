@@ -57,7 +57,7 @@ I'm just me. A girl in love with Arch, cyberpunk, metal, singing and Slovak cuva
 | Menu | [rofi](https://github.com/davatorium/rofi) |
 | Power Manager | xfce4-power-manager, [tlp](https://github.com/linrunner/TLP) |
 | Sound | alsa |
-| Sound Control | pavucontrol |
+| Sound Control | pavucontrol, alsamixer, amixer |
 | Sound Equalizer | [pulseaudio-equalizer-ladspa](https://github.com/pulseaudio-equalizer-ladspa/equalizer) based on [swh-plugins](https://github.com/swh/ladspa) |
 | Network Manager | connman |
 | Terminal | [termite](https://github.com/thestinger/termite/) |

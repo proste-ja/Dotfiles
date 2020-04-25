@@ -68,6 +68,7 @@ fi
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $HOME/.zsh_prompt
 #source $HOME/.zsh_powerline
 
 
@@ -210,22 +211,11 @@ done
 
 
 
-#######################
-##		Set prompt		##
-#######################
-PR_NO_COLOR="%{$terminfo[sgr0]%}"
-PS1="${PR_LIGHT_BLUE}╭─${PR_LIGHT_BLUE}[%(!.${PR_LIGHT_RED}%n.$PR_LIGHT_GREEN%n)$PR_LIGHT_BLUE@$PR_LIGHT_WHITE%m$PR_LIGHT_BLUE] %(!.${PR_LIGHT_RED}%~.${PR_LIGHT_BLUE}%~)$PR_LIGHT_WHITE%(!.${PR_LIGHT_RED}#.)
-${PR_LIGHT_BLUE}╰ ${PR_LIGHT_BLUE}%D{KISS} ${PR_LIGHT_GREEN}$ "
-RPS1="%(?..${PR_LIGHT_RED}[${PR_LIGHT_RED}%?])"
-unsetopt ALL_EXPORT
-
-
-
 ####################
 ##		Other		##
 ####################
 #[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
 #neofetch
+#$HOME/.config/i3/Scripts/scripts/al-info
 $HOME/.config/i3/Scripts/scripts/ufetch-artix
-
 

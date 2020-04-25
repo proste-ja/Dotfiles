@@ -7,7 +7,7 @@ LOCKER='i3lock-my'
 OPT=$(echo -e '✘\n\n\n\n' \
 	| rofi -markup-rows -hide-scrollbar -fullscreen -no-custom -no-lazy-grab \
     	-location 0 -bw 2 -eh 1 \
-	-theme "$HOME/.config/polybar/themes/powermenu-fullscreen.rasi" \
+	-theme "$HOME/.config/rofi/themes/powermenu-fullscreen.rasi" \
 	-theme-str '#window {width: 100%;}' \
 	-theme-str '#window {height: 100%;}' \
 	-theme-str '#window {border: 350 280 350 280;}' \

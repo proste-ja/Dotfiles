@@ -5,7 +5,7 @@ export TERM=xterm
 OPT=$(echo -e '\n\n\n\n\n' \
 	| rofi -markup-rows -hide-scrollbar -fullscreen -no-custom -no-lazy-grab \
     	-location 0 -bw 2 -eh 1 \
-	-theme "$HOME/.config/polybar/themes/powermenu-fullscreen.rasi" \
+	-theme "$HOME/.config/rofi/themes/powermenu-fullscreen.rasi" \
 	-theme-str '#window {width: 100%;}' \
 	-theme-str '#window {height: 100%;}' \
 	-theme-str '#window {border: 350 100 350 100;}' \
@@ -35,7 +35,7 @@ then
       	*) scrott -d 1 -s -e -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka výseku vytvorená' ;;
       	*) flameshot gui ;;
       	*) mate-screenshot --interactive ;;
-      	*) $HOME/.config/i3/Scripts/scripts/screenie; exec notify-send 'Snímka plôch vytvorená' ;;
+      	*) $HOME/.config/polybar/scripts/screenie; exec notify-send 'Snímka plôch vytvorená' ;;
       	*) ;;
     esac
 fi

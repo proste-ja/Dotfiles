@@ -76,5 +76,5 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 | Music Player | [moc](http://moc.daper.net/) |
 | PDF Viewer | evince-light |
 | Archiver | file-roller |
-| Office Suite | [OnlyOffice DesktopEditors](https://github.com/ONLYOFFICE/DesktopEditors) |
+| Office Suite | [WPS Office](https://linux.wps.com/), [OnlyOffice DesktopEditors](https://github.com/ONLYOFFICE/DesktopEditors) |
 | Image Editor | gimp |

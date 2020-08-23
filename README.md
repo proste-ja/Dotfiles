@@ -70,7 +70,7 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 | Screenshot App | scrot, [flameshot](https://github.com/lupoDharkael/flameshot) |
 | System Optimizer | bleachbit |
 | System Monitor | htop |
-| File Manager | pcmanfm,thunar, [ranger](https://github.com/ranger/ranger) |
+| File Manager | pcmanfm ,thunar, [ranger](https://github.com/ranger/ranger) |
 | Text Editor | gedit2, nano, vim |
 | Image Viewer | [viewnior](https://github.com/hellosiyan/Viewnior) |
 | Music Player | [moc](http://moc.daper.net/) |

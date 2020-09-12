@@ -32,7 +32,7 @@ configuration {
     spacing: 0em;
     background-color: #00000000;
     border-color: @blue;
-    font: "Iosevka Nerd Font 11";
+    font: "Iosevka Nerd Font 16";
 }
 
 #window {
@@ -107,7 +107,6 @@ wrapper-mode-switcher {
     fixed-height: true;
     border: 2px;
     padding: 1em;
-    columns: 1;
     background-color: @back; 
     text-color: @blue;
 }

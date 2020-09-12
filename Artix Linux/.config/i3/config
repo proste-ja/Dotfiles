@@ -248,13 +248,16 @@ bindsym $mod+Ctrl+Left workspace prev
 #############################################
 
 ## increase sound volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst high && pkill -RTMIN+1 i3blocks
+#bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst high && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst high
 
 ## decrease sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst low && pkill -RTMIN+1 i3blocks
+#bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst low && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst low
 
 ## mute sound
-bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst mute && pkill -RTMIN+1 i3blocks
+#bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst mute && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/Scripts/scripts/volume_dunst mute
 
 
 ############################################
@@ -301,17 +304,17 @@ bindsym XF86Forward exec mocp --next
 #				Theme colors					#
 #############################################
 
-## class                 		border  backgr.    	text        indicator	child_border
-client.focused		#253035	#253035	#c0c5ce	#253035	#253035
+## class                 			border  backgr.    	text        indicator	child_border
+client.focused			#253035	#253035	#c0c5ce	#253035	#253035
 client.focused_inactive	#253035	#253035	#c0c5ce	#253035	#253035
-client.unfocused		#303d44	#303d44	#c0c5ce	#303d44	#303d44
+client.unfocused			#303d44	#303d44	#c0c5ce	#303d44	#303d44
 client.urgent 			#5994ad	#5994ad	#c0c5ce	#5994ad	#5994ad
-client.placeholder      	#303d44	#303d44	#c0c5ce	#303d44	#303d44
+client.placeholder      		#303d44	#303d44	#c0c5ce	#303d44	#303d44
 client.background		#4f6571
 
 
 #############################################
-#				Gaps Settings					#
+#				Gaps Settings				#
 #############################################
 
 ## Window borders and gaps
@@ -387,7 +390,7 @@ mode "$powermenu" {
 
 exec_always --no-startup-id ~/.config/polybar/launch
 exec --no-startup-id i3-msg 'workspace $WS1'
-exec --no-startup-id feh --bg-fill --no-xinerama ~/Obrázky/wallpaper.png
+exec --no-startup-id feh --bg-fill ~/Obrázky/wallpaper.png
 #exec --no-startup-id "sh -c 'sleep 11; ~/.config/i3/Scripts/update_dunst'"
 #exec --no-startup-id ~/.config/i3/Scripts/scripts/update_dunst
 
@@ -399,8 +402,10 @@ exec --no-startup-id feh --bg-fill --no-xinerama ~/Obrázky/wallpaper.png
 assign [class="^Termite$" title="^neomutt$"] $WS2
 assign [class="^Termite$" title="^newsboat$"] $WS3
 assign [class="^Termite$" title="^mocp$"] $WS4
+assign [class="^firefox$"] $WS5
 assign [class="^Firefox$"] $WS5
 assign [class="^Nightly$"] $WS5
+assign [class="^Opera$"] $WS5
 assign [class="^Chromium$"] $WS5
 assign [class="^Brave-browser$"] $WS5
 assign [class="^Tixati$"] $WS6
@@ -434,11 +439,11 @@ bindsym $mod1+BackSpace exec thunar
 bindsym $mod+d exec "$HOME/.config/i3/Scripts/rofi-my"
 #bindsym $mod1+d exec "$HOME/.config/i3/Scripts/scripts/morc_menu"
 #bindsym $mod1+f exec "$HOME/.config/i3/Scripts/rofi/search_rofi"
-bindsym $mod+m exec "$HOME/.config/i3/Scripts/neomutt-my"
-bindsym $mod+n exec "$HOME/.config/i3/Scripts/newsboat-my"
+#bindsym $mod+m exec "$HOME/.config/i3/Scripts/neomutt-my"
+#bindsym $mod+n exec "$HOME/.config/i3/Scripts/newsboat-my"
 bindsym $mod+p exec "$HOME/.config/i3/Scripts/mocp-my"
 bindsym $mod+i exec firefox
-bindsym $mod1+i exec brave-nightly
+bindsym $mod1+i exec opera
 #bindsym $mod+Shift+i exec palemoon
 #bindsym $mod1+Shift+i exec brave
 bindsym $mod+b exec tixati
@@ -447,18 +452,18 @@ bindsym $mod1+Shift+b exec JDownloader2
 bindsym $mod+Shift+s exec mate-search-tool
 bindsym Print exec "$HOME/.config/i3/Scripts/scripts/screenshots-border"
 bindsym $mod+Print exec flameshot gui
-bindsym $mod+Ctrl+Print exec "scrot -u -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka okna vytvorená'"
-bindsym $mod+Shift+Print exec "scrot -d 5 -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka plochy vytvorená'"
+#bindsym $mod+Ctrl+Print exec "scrot -u -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka okna vytvorená'"
+#bindsym $mod+Shift+Print exec "scrot -d 5 -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka plochy vytvorená'"
 #bindsym $mod+Alt+Print exec "$HOME/.config/i3/Scripts/scripts/screenie"
-bindsym $mod1+w exec feh --bg-fill --no-xinerama ~/Obrázky/wallpaper.png
+bindsym $mod1+w exec feh --bg-fill ~/Obrázky/wallpaper.png
 bindsym $mod1+l exec "$HOME/.config/i3/Scripts/i3lock-my"
 bindsym $mod1+Delete exec "$HOME/.config/i3/Scripts/scripts/powermenu-nofullscreen-border"
 bindsym $mod1+s exec "$HOME/.config/i3/Scripts/sysinfofull-my"
 bindsym $mod1+Shift+s exec "$HOME/.config/i3/Scripts/sysinfo-my"
 #bindsym $mod1+p exec "$HOME/.config/i3/Scripts/weather-my"
 #bindsym $mod1+Shift+p exec "$HOME/.config/i3/Scripts/weather1-my"
-bindsym $mod1+c exec "$HOME/.config/i3/Scripts/colors-my"
-bindsym $mod1+Shift+c exec "$HOME/.config/i3/Scripts/colorsskull-my"
+bindsym $mod1+c exec "$HOME/.config/i3/Scripts/colorsskull-my"
+#bindsym $mod1+Shift+c exec "$HOME/.config/i3/Scripts/colors-my"
 #bindsym $mod+x exec "xrandr --output HDMI-0 --mode 1920x1080 --rate 60.05 --output DVI-I-1 --mode 1366x768 --rate 59.79 --left-of HDMI-0 && nitrogen --restore; exec notify-send 'Sekundárny monitor pripojený'"
 #bindsym $mod1+x exec "xrandr  --output HDMI-0 --off --output DVI-I-1 --auto; exec notify-send 'Sekundárny monitor odpojený'"
 bindsym $mod1+Ctrl+d --release exec "killall dunst; exec notify-send 'Dunst reštartovaný'"
@@ -466,8 +471,10 @@ bindsym $mod+Shift+d exec "gvfs-trash --empty; exec notify-send 'Kôš vyprázdn
 bindsym $mod1+Shift+d exec "gvfs-trash $HOME/.cache/watch_later; exec notify-send 'História mpv odstránená'"
 
 ## Multimedia keys
-bindsym XF86Mail exec "$HOME/.config/i3/Scripts/neomutt-my"
-bindsym XF86HomePage exec "$HOME/.config/i3/Scripts/newsboat-my"
+#bindsym XF86Mail exec "$HOME/.config/i3/Scripts/neomutt-my"
+bindsym XF86Mail exec "firefox 'https://mail.google.com/mail/u/0/#inbox'"
+#bindsym XF86HomePage exec "$HOME/.config/i3/Scripts/newsboat-my"
+bindsym XF86HomePage exec feh --bg-fill ~/Obrázky/wallpaper.png
 bindsym XF86Tools exec "$HOME/.config/i3/Scripts/mocp-my"
 bindsym XF86Search exec firefox
 

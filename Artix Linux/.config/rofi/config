@@ -1,53 +1,30 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!		General settings		!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! rofi.modi: combi
-! rofi.combi-modi: window,windowcd,drun,ssh
-rofi.fake-transparency: false
-rofi.fake-background: screenshot
-rofi.location: 0
-rofi.hide-scrollbar: true
-rofi.cycle: true
-rofi.tokenize: true
-rofi.fixed-num-lines: true
-rofi.disable-history: false
-rofi.case-sensitive: false
-rofi.sidebar-mode: false
-rofi.auto-select: true
-rofi.fuzzy: true
-rofi.glob: false
-rofi.regex: false
-rofi.fullscreen: false
-rofi.font: Terminus bold 13
-rofi.opacity: 50
-rofi.bw: 2
-rofi.eh: 1
-rofi.line-margin: 2
-rofi.color-enabled: true
-rofi.separator-style: dash
-
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!		Grey-green BLUE Light		!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!					bg       	border   	separator
-rofi.color-window:		#303d44, #5994ad, #5994ad
-
-!!!                  		bg       	fg       	bg-alt   	hl-bg 	hl-fg
-rofi.color-normal:	#303d44, #4f6571, #303d44, #4f6571, #5994ad
-rofi.color-active:	#303d44, #4f6571, #303d44, #4f6571, #5994ad
-rofi.color-urgent:	#303d44, #4f6571, #303d44, #4f6571, #993a3b
-
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!		Notes		!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! Separator style (none, dash, solid)
-! bg = background
-! fg = foreground
-! bg-alt = alternative background
-! hl-bg = highlight background
-! hl-fg = highlight foregorund
-
-
-rofi.theme: /home/lombardo/.config/rofi/themes/green-grey-rezlooks.rasi
+configuration {
+	columns: 1;
+	font: "Terminus bold 13";
+	bw: 2;
+	location: 0;
+	fixed-num-lines: true;
+	show-icons: false;
+	disable-history: false;
+	case-sensitive: false;
+	cycle: true;
+	sidebar-mode: false;
+	eh: 1;
+	auto-select: true;
+	tokenize: true;
+	line-margin: 2;
+	separator-style: "dash";
+	hide-scrollbar: true;
+	fullscreen: false;
+	fake-transparency: false;
+	fake-background: "screenshot";
+	display-window: "";
+	display-windowcd: "";
+	display-run: "";
+	display-ssh: "";
+	display-drun: "";
+	display-combi: "";
+	display-keys: "";
+	display-calc: "";
+}
+rofi.theme: /home/lombardo/.config/rofi/themes/green-grey-paper-float.rasi

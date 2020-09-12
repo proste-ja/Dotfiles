@@ -1,0 +1,187 @@
+/**
+ * A floating box version of the paper theme.
+ *
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+configuration {
+
+    display-ssh:			"";
+    display-run:			"";
+    display-drun:			"";
+    display-window:		"";
+    display-windowcd:		"";
+    display-calc:			"";
+    display-top:			"";
+    display-keys:			"";
+    display-combi:			"";
+    show-icons: false;
+}
+
+* {
+    foreground:  #4f6571;
+    dark-foreground: #303d44;
+    light-foreground: #3b4a53;
+    background: #303d44;
+    blue:  	#5994ad;
+
+    spacing: 2;
+    background-color: #00000000;
+    border-color: #4f6571;
+    anchor: north;
+    location: center;
+    font: "Iosevka Nerd Font 12";
+}
+window {
+    transparency: "screenshot";
+    background-color: #00000000;
+    border: 0;
+    padding: 0% 0% 0.5em 0%;
+    x-offset: 0;
+    y-offset: -10%;
+}
+mainbox {
+    padding: 0px;
+    border: 0;
+    spacing: 0.5%;
+}
+message {
+    border: 2px;
+    padding: 1em;
+    background-color: @background;
+    text-color: @foreground;
+}
+textbox normal {
+    text-color: @foreground;
+    padding: 0;
+    border: 0;
+}
+listview {
+    fixed-height: 1;
+    border: 2px;
+    padding: 1em;
+    reverse: false;
+
+    columns: 1;
+    text-color: @foreground;
+    background-color: @background;
+}
+element {
+    border: 0;
+    padding: 2 0 2 6;
+    highlight: bold ;
+}
+element normal.normal {
+    text-color: @light-foreground;
+    background-color: @background;
+}
+element normal.urgent {
+    text-color: @light-foreground;
+    background-color: @background;
+}
+element normal.active {
+    text-color: @foreground;
+    background-color: @background;
+    border: 1;
+    border-color: @light-foreground;
+}
+element selected.normal {
+    text-color: @foreground;
+    background-color: @background;
+    border: 1;
+    border-color: @light-foreground;
+}
+element selected.urgent {
+    text-color: @foreground;
+    background-color: @background;
+    border: 1;
+    border-color: @light-foreground;
+}
+element selected.active {
+    text-color: @foreground;
+    background-color: @background;
+    border: 1;
+    border-color: @light-foreground;
+}
+element alternate.normal {
+    text-color: @light-foreground;
+    background-color: @background;
+}
+element alternate.urgent {
+    text-color: @light-foreground;
+    background-color: @background;
+}
+element alternate.active {
+    text-color: @foreground;
+    background-color: @background;
+    border: 1;
+    border-color: @light-foreground;
+}
+scrollbar {
+    border: 0;
+    padding: 0;
+}
+inputbar {
+    spacing: 0;
+    border: 2px;
+    padding: 0.5em 1em;
+    text-color: @foreground;
+    background-color: @background;
+    index: 0;
+}
+inputbar normal {
+    foreground-color:  @foreground;
+    background-color: @background;
+}
+
+mode-switcher {
+    border: 2px;
+    padding: 0.5em 1em;
+    text-color: @foreground;
+    background-color: @background;
+    index: 10;
+}
+button {
+    text-color: @light-foreground;
+    background-color: @background;
+    font: "FontAwesome 17";
+}
+button selected {
+    text-color: @foreground;
+    background-color: @background;
+    font: "FontAwesome 17";
+}
+inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+prompt {
+    font: "Iosevka Nerd Font 12";
+    spacing:    0;
+    background-color: @background ;
+    text-color: @foreground;
+    highlight: bold red;
+}
+textbox-prompt-colon {
+    expand:     false;
+    margin:     0px 1em 0em 0em ;
+    text-color: @foreground;
+}
+entry {
+    spacing: 0;
+    text-color: @foreground;
+    background-color: @background;
+}
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+    background-color: @background;
+}
+
+error-message {
+    border: 2px;
+    padding: 1em;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+// vim: ft=css

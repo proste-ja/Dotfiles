@@ -37,6 +37,8 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 
 ![](Screenshots/Previews/preview-polybar-parallel-lock.jpg)
 
+![](Screenshots/Previews/preview-rofi-menu-paper-float.jpg)
+
 
 # All details
 

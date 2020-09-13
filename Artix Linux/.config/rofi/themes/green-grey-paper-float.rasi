@@ -1,8 +1,9 @@
 /**
  * A floating box version of the paper theme.
  *
- * User: Qball
+ * User: lombardo1981
  * Copyright: Dave Davenport
+ * edited by lombardo1981
  */
 configuration {
 
@@ -12,7 +13,7 @@ configuration {
     display-window:		"";
     display-windowcd:		"";
     display-calc:			"";
-    display-top:			"";
+    display-top:			"";
     display-keys:			"";
     display-combi:			"";
     show-icons: false;
@@ -20,33 +21,40 @@ configuration {
 
 * {
     foreground:  #4f6571;
-    dark-foreground: #303d44;
     light-foreground: #3b4a53;
     background: #303d44;
+    border-color: #303d44;
+    text-color: #3b4a53;
     blue:  	#5994ad;
 
     spacing: 2;
     background-color: #00000000;
-    border-color: #4f6571;
-    anchor: north;
+    transparency: "screenshot";
+    anchor: center;
     location: center;
     font: "Iosevka Nerd Font 12";
 }
 window {
     transparency: "screenshot";
     background-color: #00000000;
-    border: 0;
-    padding: 0% 0% 0.5em 0%;
+    padding: 0 0 0.5em 0;
     x-offset: 0;
     y-offset: -10%;
+    children: [ windowborder ];
+}
+windowborder {
+    border: 4;
+    border-color:	@border-color;
+    children: [ mainbox ];
 }
 mainbox {
-    padding: 0px;
-    border: 0;
-    spacing: 0.5%;
+    spacing: 3;
+    padding: 0;
+    border: 3;
+    border-color:	@background-color;
 }
 message {
-    border: 2px;
+    border: 3;
     padding: 1em;
     background-color: @background;
     text-color: @foreground;
@@ -54,68 +62,25 @@ message {
 textbox normal {
     text-color: @foreground;
     padding: 0;
-    border: 0;
 }
 listview {
-    fixed-height: 1;
-    border: 2px;
-    padding: 1em;
     reverse: false;
-
+    fixed-height: true;
+    border: 2;
+    padding: 10;
     columns: 1;
     text-color: @foreground;
     background-color: @background;
 }
 element {
-    border: 0;
-    padding: 2 0 2 6;
-    highlight: bold ;
+    padding: 4 0 4 8;
+    highlight: bold underline;
 }
-element normal.normal {
-    text-color: @light-foreground;
-    background-color: @background;
-}
-element normal.urgent {
-    text-color: @light-foreground;
-    background-color: @background;
-}
-element normal.active {
+element selected {
+    border: 1;
+    border-color:	@light-foreground;
     text-color: @foreground;
     background-color: @background;
-    border: 1;
-    border-color: @light-foreground;
-}
-element selected.normal {
-    text-color: @foreground;
-    background-color: @background;
-    border: 1;
-    border-color: @light-foreground;
-}
-element selected.urgent {
-    text-color: @foreground;
-    background-color: @background;
-    border: 1;
-    border-color: @light-foreground;
-}
-element selected.active {
-    text-color: @foreground;
-    background-color: @background;
-    border: 1;
-    border-color: @light-foreground;
-}
-element alternate.normal {
-    text-color: @light-foreground;
-    background-color: @background;
-}
-element alternate.urgent {
-    text-color: @light-foreground;
-    background-color: @background;
-}
-element alternate.active {
-    text-color: @foreground;
-    background-color: @background;
-    border: 1;
-    border-color: @light-foreground;
 }
 scrollbar {
     border: 0;
@@ -123,20 +88,21 @@ scrollbar {
 }
 inputbar {
     spacing: 0;
-    border: 2px;
-    padding: 0.5em 1em;
+    border: 2;
+    padding: 10 10 10 18;
     text-color: @foreground;
     background-color: @background;
     index: 0;
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 inputbar normal {
-    foreground-color:  @foreground;
+    text-color: @foreground;
     background-color: @background;
 }
 
 mode-switcher {
-    border: 2px;
-    padding: 0.5em 1em;
+    border: 2;
+    padding: 10 20;
     text-color: @foreground;
     background-color: @background;
     index: 10;
@@ -149,27 +115,22 @@ button {
 button selected {
     text-color: @foreground;
     background-color: @background;
-    font: "FontAwesome 17";
-}
-inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 prompt {
-    font: "Iosevka Nerd Font 12";
     spacing:    0;
-    background-color: @background ;
+    background-color: @background;
     text-color: @foreground;
-    highlight: bold red;
 }
 textbox-prompt-colon {
     expand:     false;
-    margin:     0px 1em 0em 0em ;
+    margin:     0 1em 0 0;
     text-color: @foreground;
 }
 entry {
     spacing: 0;
     text-color: @foreground;
     background-color: @background;
+    font: "Iosevka Nerd Font Bold 12";
 }
 case-indicator {
     spacing:    0;
@@ -178,7 +139,7 @@ case-indicator {
 }
 
 error-message {
-    border: 2px;
+    border: 2;
     padding: 1em;
     background-color: @background;
     text-color: @foreground;

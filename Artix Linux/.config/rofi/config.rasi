@@ -1,0 +1,36 @@
+configuration {
+	columns: 1;
+    	font: "Iosevka Nerd Font 12";
+	bw: 2;
+	eh: 1;
+	location: 0;
+	fixed-num-lines: true;
+	show-icons: false;
+	disable-history: false;
+	case-sensitive: false;
+	cycle: true;
+	sidebar-mode: true;
+	auto-select: true;
+	tokenize: true;
+	line-margin: 2;
+	separator-style: "dash";
+	hide-scrollbar: true;
+	fullscreen: false;
+	fake-transparency: false;
+	fake-background: "screenshot";
+	display-window: "";
+	display-windowcd: "";
+	display-run: "";
+	display-ssh: "";
+	display-drun: "";
+	display-combi: "";
+	display-top: "";
+	display-keys: "";
+	display-calc: "";
+	color-normal: "#303d44, #3b4a53, #303d44, #303d44, #4f6571";
+	color-urgent: "#303d44, #3b4a53, #303d44, #303d44, #4f6571";
+	color-active: "#303d44, #3b4a53, #303d44, #303d44, #4f6571";
+	color-window: "#303d44, #4f6571, #3b4a53";
+}
+
+@import "/home/lombardo/.config/rofi/themes/green-grey-paper-float.rasi"

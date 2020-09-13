@@ -1,8 +1,6 @@
 #!/bin/bash
 
 export TERM=xterm
-USE_LOCKER='false'
-LOCKER='i3lock-my'
 
 OPT=$(echo -e '✘  Cancel\n  Desktop\n  Window\n  Sector\n  Flameshot\n  Desktops' \
 	| rofi -markup-rows -hide-scrollbar -no-fullscreen -no-custom -no-lazy-grab \

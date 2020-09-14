@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-clear
-curl sk.wttr.in/Bratislava

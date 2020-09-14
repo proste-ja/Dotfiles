@@ -1,0 +1,45 @@
+#!/bin/bash
+
+export TERM=xterm
+USE_LOCKER='false'
+LOCKER='i3lock-my'
+
+OPT=$(echo -e '✘\n\n\n\n' \
+	| rofi -markup-rows -hide-scrollbar -no-fullscreen -no-custom -no-lazy-grab \
+    	-location 0 -bw 2 -eh 1 \
+	-theme "$HOME/.config/rofi/themes/powermenu-fullscreen.rasi" \
+	-theme-str '#window {width: 72%;}' \
+	-theme-str '#window {height: 19%;}' \
+        -theme-str '#window {x-offset: 0%; y-offset: -10%;}' \
+        -theme-str '#window {border-color: @back;}' \
+        -theme-str '#wrapper-mode-switcher {enabled: false;}' \
+        -theme-str '#inputbar {enabled: false;}' \
+        -theme-str '#inputbar {children: [prompt];}' \
+        -theme-str '#inputbar {padding: 0px;}' \
+        -theme-str '#listview {padding: 10;}' \
+        -theme-str '#listview {columns: 1;}' \
+        -theme-str '#listview {lines: 5;}' \
+        -theme-str '#listview {border: 0px;}' \
+        -theme-str '#listview {border-color: @text;}' \
+        -theme-str '#listview {layout: horizontal;}' \
+        -theme-str '#element {horizontal-align: 0.50;}' \
+	-theme-str '#element {padding: 5 0 5 0;}' \
+        -theme-str '#element {text-color: @text-alt;}' \
+        -theme-str '#element.selected {background-color: @back;}' \
+        -theme-str '#element.selected {text-color: @text;}' \
+	-dmenu -i -p '                    Powermenu')
+
+if [ ${#OPT} -gt 0 ]
+then
+    case $OPT in
+	*✘) ;;
+	*) i3lock-my ;;
+	*) i3-msg exit ;;
+      	*) reboot ;;
+      	*) poweroff ;;
+      	*Suspend) $($USE_LOCKER) && "$LOCKER"; suspend ;;
+      	*Hibernate) $($USE_LOCKER) && "$LOCKER"; hibernate ;;
+      	*) ;;
+    esac
+fi
+

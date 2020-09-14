@@ -53,9 +53,9 @@ modules-right = left-end-top volume right-end-bottom left-end-top updates right-
 enable-ipc = true
 locale = sk_SK.UTF-8
 
-click-left = exo-open --launch TerminalEmulator
+;click-left = exo-open --launch TerminalEmulator
 click-right = exo-open --launch FileManager
-click-middle = $HOME/.config/polybar/Scripts/rofi-my
+click-middle = $HOME/.config/i3/Scripts/rofi-my
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 double-click-left = 

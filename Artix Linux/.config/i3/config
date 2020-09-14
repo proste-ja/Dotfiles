@@ -450,7 +450,7 @@ bindsym $mod+b exec tixati
 bindsym $mod1+b exec freerapid
 bindsym $mod1+Shift+b exec JDownloader2
 bindsym $mod+Shift+s exec mate-search-tool
-bindsym Print exec "$HOME/.config/i3/Scripts/scripts/screenshots-border"
+bindsym Print exec "$HOME/.config/i3/Scripts/scripts/screenshots"
 bindsym $mod+Print exec flameshot gui
 #bindsym $mod+Ctrl+Print exec "scrot -u -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka okna vytvorená'"
 #bindsym $mod+Shift+Print exec "scrot -d 5 -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png; exec notify-send 'Snímka plochy vytvorená'"

@@ -13,7 +13,7 @@ OPT=$(echo -e '✘  Cancel\n  Lock\n  Logout\n  Reboot\n  Poweroff' 
         -theme-str '#window {border-color: @back;}' \
         -theme-str '#mode-switcher {enabled: false;}' \
         -theme-str '#inputbar {enabled: false;}' \
-        -theme-str '#listview {padding: 20 10 10 20;}' \
+        -theme-str '#listview {padding: 10 10 10 20;}' \
         -theme-str '#listview {lines: 5;}' \
 	-dmenu -i -p 'Powermenu')
 

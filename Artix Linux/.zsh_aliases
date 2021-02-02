@@ -30,8 +30,7 @@ alias fzfs='~/.config/i3/Scripts/fzf-my'
 alias path='echo -e ${PATH//:/\\n}'
 
 alias nano='nano -wtLOW -$'
-alias gkg='gksu dbus-launch gedit'
-alias sudog='sudo dbus-launch gedit'
+alias doas='sudo'
 
 alias ro='sudo pacman -Rns $(pacman -Qtdq)'
 alias ru='sudo paccache -ruk0'
@@ -55,7 +54,6 @@ alias pacui='~/.config/i3/Scripts/pacui-my'
 alias pkg='~/.config/i3/Scripts/scripts/pkgsearch'
 alias sizes='~/.config/i3/Scripts/scripts/sizes'
 
-alias pikaur='pikaur'
 alias sa='pikaur -S'
 alias pss='pikaur -Ss'
 alias ass='pikaur -Ss --aur'

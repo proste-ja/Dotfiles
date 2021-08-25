@@ -66,8 +66,12 @@ fi
 ##		Sources		##
 ####################
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+#source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+source $HOME/.zsh_autocomplete
 source $HOME/.zsh_prompt
 #source $HOME/.zsh_powerline
 
@@ -112,13 +116,15 @@ unsetopt bgnice autoparamslash
 
 
 #######################
-##		ZSH options	##
+##		ZSH options		##
 #######################
+#setopt appendhistory
+setopt INC_APPEND_HISTORY  
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
 #setopt NOHUP
 #setopt NOTIFY
 #setopt NO_FLOW_CONTROL
-setopt INC_APPEND_HISTORY SHARE_HISTORY
-setopt APPEND_HISTORY
 #setopt AUTO_LIST
 #setopt AUTO_REMOVE_SLASH
 #setopt AUTO_RESUME
@@ -142,6 +148,8 @@ setopt ALIASES
 ##	Autoload ZSH modules	##
 ###########################
 autoload -U history-search-end
+autoload -Uz compinit && compinitautoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
 zmodload -a zsh/stat stat
 zmodload -a zsh/zpty zpty
 zmodload -a zsh/zprof zprof
@@ -151,19 +159,25 @@ zle -N history-beginning-search-forward-end history-search-end
 
 
 
+##################################
+##	Case insensitive path-completion	##
+##################################
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
+
+
 #######################
 ##		Key bindings	##
 #######################
-autoload -U compinit
-compinit
 bindkey "^?" backward-delete-char
 bindkey '^[OH' beginning-of-line
 bindkey '^[OF' end-of-line
 bindkey '^[[5~' up-line-or-history
 bindkey '^[[6~' down-line-or-history
-bindkey "^[[A" history-beginning-search-backward-end
-bindkey "^[[B" history-beginning-search-forward-end
-bindkey "^r" history-incremental-search-backward
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+#bindkey '^[[A' history-beginning-search-backward-end
+#bindkey '^[[B' history-beginning-search-forward-end
+bindkey '^r' history-incremental-search-backward
 bindkey ' ' magic-space    # also do history expansion on space
 bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 typeset -A key
@@ -172,13 +186,13 @@ key[Delete]=${terminfo[kdch1]}
 
 
 
-###########################
-##		ZSH Highlight		##
-###########################
+##################################
+##		ZSH Plugins configuration	##
+##################################
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_STYLES[cursor]='fg=bold'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=green,bold'
-ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green,bold'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=bl,bold'
 ZSH_HIGHLIGHT_STYLES[command]='fg=green'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
 ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=green'
@@ -193,6 +207,8 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-4]='fg=cyan,bold'
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf' 'fg=magenta,bold')
 ZSH_HIGHLIGHT_PATTERNS+=('rmf' 'fg=magenta,bold')
 ZSH_HIGHLIGHT_PATTERNS+=('sudo sh' 'fg=magenta,bold')
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 
 
@@ -215,7 +231,4 @@ done
 ##		Other		##
 ####################
 #[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
-#neofetch
-#$HOME/.config/i3/Scripts/scripts/al-info
-$HOME/.config/i3/Scripts/scripts/ufetch-artix
-
+$HOME/.config/i3/Scripts/scripts/ufetch-arch

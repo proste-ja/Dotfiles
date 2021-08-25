@@ -30,12 +30,12 @@ alias fzfs='~/.config/i3/Scripts/fzf-my'
 alias path='echo -e ${PATH//:/\\n}'
 
 alias nano='nano -wtLOW -$'
-alias doas='sudo'
+alias sudo='doas'
 
 alias ro='sudo pacman -Rns $(pacman -Qtdq)'
 alias ru='sudo paccache -ruk0'
 alias rua='paccache --cachedir ~/.cache/pikaur/pkg -ruk0'
-alias cc='sudo paccache -r'
+alias cc='sudo paccache -rk1'
 alias cca='paccache --cachedir ~/.cache/pikaur/pkg -rk1'
 alias ccs='ccache -s'
 
@@ -68,21 +68,44 @@ alias ap='pikaur -Qu 2&> /dev/null | cut -d " " -f1 | wc -l'
 alias apr='pikaur -Qur 2&> /dev/null | cut -d " " -f1 | wc -l'
 alias apa='pikaur -Qua 2&> /dev/null | cut -d " " -f1 | wc -l'
 
+#alias poweroff='loginctl poweroff'
+#alias reboot='loginctl reboot'
 
-function wet() {
-    clear
-    curl "sk.wttr.in/Bratislava?F"
+alias shot='scrot -d 5 -c -q 100 ~/Obrázky/snímka_%Y-%m-%d_%H-%M-%S.png'
+#alias mirrors='curl -s "https://archlinux.org/mirrorlist/?country=FR&country=GB&protocol=https&use_mirror_status=on" | sed -e "s/^#Server/Server/" -e "/^#/d" | rankmirrors -n 20 -'
+alias infosf='~/.config/i3/Scripts/scripts/sys-info-full'
+alias infos='~/.config/i3/Scripts/scripts/sys-info'
+alias archc='~/.config/i3/Scripts/scripts/color-scheme-arch'
+alias pipes='~/.config/i3/Scripts/scripts/pipes'
+alias pipesb='~/.config/i3/Scripts/scripts/pipes -c4'
+alias arch='cat ~/.config/i3/ASCII/arch-logo'
+alias astro='cat ~/.config/i3/ASCII/astro-boy'
+alias robot='cat ~/.config/i3/ASCII/fsociety2'
+
+
+
+function eac640() {
+    for i in *.ac3 ; do 
+	ffmpeg -i "$i" -b:a 640k "$(basename "${i/.ac3}")".eac3
+	sleep 1
+    done
 }
 
-function wet1() {
-    clear
-    curl "sk.wttr.in/Bratislava?1F"
+function eac3() {
+    for i in *.ac3 ; do 
+	ffmpeg -i "$i" -b:a 1920k "$(basename "${i/.ac3}")".eac3
+	sleep 1
+    done
 }
 
-function covid() {
-    clear
-    curl "https://trackercli.com/sk"
-    print
-    curl "https://corona-stats.online/SK"
+function poweroff() {
+    ~/.config/i3/Scripts/scripts/firefox-sync
+    loginctl poweroff
 }
+
+function reboot() {
+    ~/.config/i3/Scripts/scripts/firefox-sync
+    loginctl reboot
+}
+
 

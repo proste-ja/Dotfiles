@@ -8,6 +8,7 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 # System informations
 
 
+* **Distro:**  Arch Linux
 * **Distro:**  Artix Linux
 
 
@@ -17,7 +18,7 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 * **Panel:** polybar 
 
 
-* **Locker:**  i3lock-fancy
+* **Locker:**  i3lock-color
 
 
 * **Emulator:** termite 
@@ -26,18 +27,18 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 * **Notify**: dunst 
 
 
-* **Running:** sys-info-full, pipes, moc, color-scheme-skull 
+* **Running:** sys-info-full,moc
 
 
 # Screenshots
 
-![](Screenshots/Previews/preview-polybar-parallel-clean.jpg)
+![](Screenshots/Previews/preview-nordic-polybar-i3gaps-clear.jpg)
 
-![](Screenshots/Previews/preview-polybar-parallel.jpg)
+![](Screenshots/Previews/preview-nordic-polybar-i3gaps.jpg)
 
-![](Screenshots/Previews/preview-polybar-parallel-lock.jpg)
+![](Screenshots/Previews/preview-nordic-polybar-i3gaps-lock.jpg)
 
-![](Screenshots/Previews/preview-rofi-menu-paper-float.jpg)
+![](Screenshots/Previews/preview-nordic-polybar-i3gaps-rofi.jpg)
 
 
 # All details
@@ -49,7 +50,7 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 | Window Manager | [i3-gaps](https://github.com/Airblader/i3) based on [i3](https://i3wm.org/) |
 | Policy Kit | lxpolkit provided by lxsession |
 | Status Bar | [polybar](https://github.com/polybar/polybar), [py3status](https://github.com/ultrabug/py3status), [i3blocks](https://github.com/vivien/i3blocks) |
-| Lock Screen | [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) |
+| Lock Screen | [i3lock-color](https://github.com/meskarune/i3lock-color) |
 | GTK Theme | edited Numix |
 | QT4 Theme | GTK provided by [Trolltech.conf](https://wiki.archlinux.org/index.php/Qt#Qt4) |
 | QT5 Theme | GTK provided by [qt5-styleplugins](https://wiki.archlinux.org/index.php/Qt#Qt5) |

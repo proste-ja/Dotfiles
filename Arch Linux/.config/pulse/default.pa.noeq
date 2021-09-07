@@ -1,0 +1,6 @@
+.include /etc/pulse/default.pa
+
+ set-default-sink ladspa_output.mbeq_1197.mbeq
+
+ load-module module-ladspa-sink sink_name=shw_sc4 sink_master=ladspa_output.mbeq_1197.mbe plugin=sc4_1882 label=sc4 control=,,,,,,,,
+ set-default-sink shw_sc4

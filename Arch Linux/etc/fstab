@@ -1,0 +1,15 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda1
+UUID=ae47220b-70a2-4552-ab55-775461b5bee0	/						xfs	defaults,noatime 0 1
+
+# /dev/sda2
+UUID=1ea16b4f-4996-4a3d-8507-aa1669a37aa0	/home					ext4	defaults,noatime	0 2
+
+# /dev/sdb1
+UUID=8e068462-e6b9-4695-93f8-96f9d5d1ab5a	/home/lombardo/Media	ext4	defaults,noatime,auto,users,rw,nofail 0 0
+
+# /tmp
+tmpfs						/tmp			tmpfs					defaults,noatime,mode=1777 0 0

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+Name=Upraviť v editore ako správca
+Icon=edit
+Profiles = on_file;
+
+[X-Action-Profile on_file]
+Name = Upraviť v editore ako správca
+SelectionCount==1
+#MimeTypes = all/allfiles;
+MimeTypes = text/*;
+Exec = xsudo medit %U

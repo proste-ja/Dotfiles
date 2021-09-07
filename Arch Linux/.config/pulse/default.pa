@@ -1,0 +1,14 @@
+.include /etc/pulse/default.pa
+
+ set-default-sink ladspa_output.mbeq_1197.mbeq
+
+ load-module module-ladspa-sink sink_name=shw_sc4 sink_master=ladspa_output.mbeq_1197.mbe plugin=sc4_1882 label=sc4 control=,,,,,,,,
+ set-default-sink shw_sc4
+### BEGIN: Equalized audio configuration
+### Generated from: pulseaudio-equalizer
+.nofail
+load-module module-ladspa-sink sink_name=ladspa_output.mbeq_1197.mbeq sink_master= plugin=mbeq_1197 label=mbeq control=3.0,3.0,7.3,7.0,3.0,-1.0,-6.6,-6.3,-4.5,-4.0,1.1,1.2,5.8,7.9,8.8
+set-default-sink ladspa_output.mbeq_1197.mbeq
+set-sink-mute  0
+.fail
+### END: Equalized audio configuration

@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# ufetch-artix - tiny system info for artix
+
+## INFO
+
+# user is already defined
+host="$(hostname)"
+os='Arch Linux'
+arch="$(uname -m)"
+kernel="$(uname -r)"
+uptime="$(uptime -p | sed 's/up //')"
+packages="$(pacman -Q | wc -l)"
+shell="$(basename "$SHELL")"
+ui="$(ps -A | awk '/i3/{print $4}' | head -1)"
+
+rep_char() {
+    local str char num
+    char="${1:-=}"
+    num="${2:-$((${#USER} + 6 + ${#host}))}"
+    str="$(printf "%${num}s")"
+    echo "${str// /$char}"
+}
+
+
+
+## DEFINE COLORS
+
+# probably don't change these
+if [ -x "$(command -v tput)" ]; then
+	bold="$(tput bold)"
+	black="$(tput setaf 0)"
+	red="$(tput setaf 1)"
+	green="$(tput setaf 2)"
+	yellow="$(tput setaf 3)"
+	blue="$(tput setaf 4)"
+	magenta="$(tput setaf 5)"
+	cyan="$(tput setaf 6)"
+	white="$(tput setaf 7)"
+	reset="$(tput sgr0)"
+fi
+
+# you can change these
+bc="${reset}${blue}"         
+cc="${reset}${cyan}"        
+gc="${reset}${green}"    
+mc="${reset}${magenta}"              
+ic="${reset}"                       		
+
+
+
+## OUTPUT
+
+cat <<EOF
+
+${bc}        /\\        ${mc}=> ${bc}${USER} ${gc}@ ${cc}${host}${reset}
+${bc}       /  \\       ${mc}$(rep_char '=')>${reset}
+${bc}      /${gc}\`'.,${bc}\\      ${mc}-> ${bc}OS:        ${ic}${os}${reset}
+${bc}     /     ${gc}',     ${mc}-> ${bc}KERNEL:    ${ic}${kernel}${reset}
+${bc}    /      ${gc},\`${bc}\\    ${mc}-> ${bc}UPTIME:    ${ic}${uptime}${reset}
+${bc}   /   ${gc},.'\`.  ${bc}\\   ${mc}-> ${bc}PACKAGES:  ${ic}${packages}${reset}
+${bc}  /  ${gc},'\`   \`', ${bc}\\  ${mc}-> ${bc}SHELL:     ${ic}${shell}${reset}
+${bc} /${gc}.,'\`       \`'.${bc}\\ ${mc}-> ${bc}WM:        ${ic}${ui}${reset}
+
+EOF

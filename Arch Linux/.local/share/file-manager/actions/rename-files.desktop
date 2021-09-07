@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+Name=Hromadné premenovanie
+Icon=edit-rename
+Profiles = on_file;
+
+[X-Action-Profile on_file]
+Name = Hromadné premenovanie
+#MimeTypes = all/all;
+#MimeTypes = video/*;image/*;audio/*;application/x-microdvd;application/x-subrip;application/x-subviewer;text/x-mpsub;text/x-ssa;text/plain;image/*;
+Exec = thunar -B %U
+SelectionCount=>1

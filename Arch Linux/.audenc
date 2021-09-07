@@ -1,0 +1,78 @@
+##########################
+# Config file for audenc #
+##########################
+#
+# Do not delete/modify the line below!
+#v=11
+
+# Favorite text editor used for the -ec option
+EDITOR="nano"
+
+# Delete (y/n) the original file(s) after encoding?
+DELORIG="n"
+
+# Which encoder (nero/faac/fdk-aac/aacplusenc) to use for AAC encoding?
+AACENC="faac"
+
+# If using aacplusenc/fdk-aac encoder should we use MP4Box to store
+# the audio inside an m4a container?
+M4A="y"
+
+# lame encoder options
+LAMEOPTS="-V 2 -q 0"
+
+# neroAacEnc encoder options
+NEROOPTS="-q 0.63 -lc"
+
+# fdk-aac (aac-enc) encoder options
+FDKAACOPTS="-r 256000 -a 1"
+
+# if using fdk-aac, which AAC mode to use?
+# 2 = LC-AAC
+# 5 = HE-AACv1
+# 29 = HE-AACv2
+AACMODE="29"
+
+# aacplusenc encoder options
+AACPLUSENCOPTS="45"
+
+# faac encoder options
+FAACOPTS="-q 140 --tns --mpeg-vers 4 -w"
+
+# oggenc encoder options
+OGGOPTS="-q 4"
+
+# opusenc encoder options
+OPUSOPTS="--bitrate 192"
+
+# flac encoder options
+FLACOPTS="-5"
+
+# aften encoder options
+AFTENOPTS="-b 448 -readtoeof 1"
+
+# dcaenc encoder options
+DCAOPTS="755000"
+
+# amrenc encoder options
+AMROPTS=""
+
+# Nice/priority value for encoding
+NVALUE="10"
+
+# Paths to mplayer/mediainfo/encoders
+MPLAYER=""
+MEDIAINFO=""
+MP4BOX=""
+LAME="/usr/bin/lame"
+NERO=""
+NEROTAG=""
+FAAC=""
+AACPLUSENC=""
+FDKAAC=""
+OGG=""
+OPUS=""
+FLAC="/usr/bin/flac"
+AFTEN=""
+DCAENC=""
+AMRENC=""

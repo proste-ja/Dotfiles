@@ -65,7 +65,7 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 | Sound Control | pavucontrol, [qasmixer](https://gitlab.com/sebholt/qastools), alsamixer, amixer |
 | Sound Equalizer | [pulseaudio-equalizer-ladspa](https://github.com/pulseaudio-equalizer-ladspa/equalizer) based on [swh-plugins](https://github.com/swh/ladspa) |
 | Network Manager | connman |
-| Terminal | [termite](https://github.com/thestinger/termite/) |
+| Terminal | [alacritty](https://github.com/alacritty/alacritty), [termite](https://github.com/thestinger/termite/) |
 | Terminal Colorscheme | [created by me](https://gitlab.com/lombardo1981/dotfiles/-/blob/master/Artix%20Linux/.config/colors/colorscheme) ([preview](https://gitlab.com/lombardo1981/dotfiles/-/blob/master/Screenshots/colorscheme.png) by [blocks](https://github.com/stark/Color-Scripts/blob/master/color-scripts/bloks) ) |
 | Shell | zsh |
 | Shell Theme | [created by me](https://gitlab.com/lombardo1981/dotfiles/-/blob/master/Artix%20Linux/.zsh_prompt) ([preview](https://gitlab.com/lombardo1981/dotfiles/-/blob/master/Screenshots/zsh-prompt.png)) |

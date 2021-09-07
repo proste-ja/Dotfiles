@@ -1,0 +1,25 @@
+######################################
+##		NANO configuration file		##
+######################################
+## General Settings
+unset backup
+set nonewlines
+set nowrap
+set softwrap
+set speller "aspell -e -x -c"
+set tempfile
+set wordbounds
+set tabsize 4
+
+## Paint the interface elements of nano
+set titlecolor brightwhite,blue
+set statuscolor brightwhite,green
+set numbercolor cyan
+set keycolor brightmagenta
+set functioncolor green
+
+
+## Included files & configs
+include "/usr/share/nano/*.nanorc"
+include "/usr/share/nano-syntax-highlighting/*.nanorc"
+

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+[[ $(which trash-list) ]] || exit 1
+
+FILES="$(trash-list | sed -r 's/^[1-2][0-9\-]+\s+[0-9:]+\s+//g' | sed -r 's/^\/home\/lombardo/~/')"
+TRASH_QTY="$(trash-list | wc -l)"
+
+if [[ "$FILES" ]] ; then
+	echo "$FILES" > /tmp/yad_trash_list.txt
+	/usr/bin/yad --width=550 --height=400 --window-icon=user-trash-full --image-on-top --image=user-trash-full \
+		--title="Vysypanie koša." \
+		--text="<span foreground='white'><big><b>V koši sa nachádza spolu: $TRASH_QTY</b></big></span>" --text-width=20 --text-align=left \
+		--text-info --filename="/tmp/yad_trash_list.txt" \
+		--button=" Zrušiť!gtk-no!Zrušiť tento dialóg:1" --button=" Vysypať kôš!gtk-ok!Potvrdiť tento dialóg:0"
+	if [[ $? -eq 0 ]] ; then
+		trash-empty
+		if [[ $? -ne 0 ]] ; then
+			STILL_IN_TRASH="$(trash-list | wc -l)"
+			[[ "$STILL_IN_TRASH" ]] && STILL_IN_TRASH="\\nV koši sa stále nachádza: $STILL_IN_TRASH"
+			notify-send -i error "Vysypanie koša zlyhalo." "Chybová hláška: "$?""
+		else
+			notify-send -i user-trash "Kôš je vysypaný."
+		fi
+	fi
+else
+	notify-send -i user-trash "Kôš je prázdny." "Žiadne súbory neboli dostránené."
+fi
+exit 0

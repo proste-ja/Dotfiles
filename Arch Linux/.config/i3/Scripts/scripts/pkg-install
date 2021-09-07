@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# sudo pacman --noconfirm -Syy je vynútená synchronizácia zrkadiel
+# sudo pacman --noconfirm -Su je aktualizácia systému
+# sudo pacman --noconfirm -S  \.... je inštalácia potrebných balíčkov
+# sudo pacman --noconfirm -Rns $(pacman -Qtdq) je odstránenie osirelých balíčkov
+# echo "" je medzera pre prehľadnosť
+# read -n 1 -r -s -p $(tput setaf 2;tput bold)'Pre pokračovanie stiskni akúkoľvek klávesu... '
+# je funkcionalita pre uzavretie okna pomocou nejakej klávesi
+# nemusí fungovať
+
+sudo pacman --noconfirm -Syy
+echo ""
+echo ""
+echo -e "\e[35m\e[1mAKTUALIZÁCIA SYSTÉMU\e[0m"
+sudo pacman --noconfirm -Su
+echo ""
+echo ""
+echo -e "\e[32m\e[1mINŠTALÁCIA POTREBNÝCH BALÍČKOV\e[0m"
+sudo pacman --noconfirm -S  \
+	dunst  \
+	feh  \
+	moc  \
+	mpv  \
+	rofi
+echo ""
+echo ""
+echo -e "\e[31m\e[1mODSTRÁNENENIE OSIRELÝCH BALÍČKOV\e[0m"
+sudo pacman --noconfirm -Rns $(pacman -Qtdq)
+echo ""
+echo ""
+read -n 1 -r -s -p $(tput setaf 4;tput bold)'Pre pokračovanie stiskni akúkoľvek klávesu... '

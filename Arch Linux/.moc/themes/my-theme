@@ -1,0 +1,37 @@
+###################################
+###		MOC Player theme		###
+###################################
+
+	
+background				= default	default
+frame					= white		default	dim
+window_title			= white		default	dim
+directory				= white		default	dim
+selected_directory		= yellow	default
+playlist					= white		default	dim
+selected_playlist			= white		default
+file						= white		default
+selected_file				= white		default	dim
+marked_file				= green		default
+marked_selected_file	= blue		default
+info						= white		default
+status					= blue		default
+title						= green		default
+state					= magenta	default	bold
+current_time			= blue		default
+time_left				= cyan		default
+total_time				= green		default
+time_total_frames		= green		default
+sound_parameters		= white		default
+legend					= white		default	dim
+disabled				= white		default
+enabled					= white		default	dim
+empty_mixer_bar		= green		default
+filled_mixer_bar			= black		green
+empty_time_bar			= green		default
+filled_time_bar			= black		green
+entry					= yellow	default
+entry_title				= red		default
+error					= red		default
+message				= yellow	default
+plist_time				= magenta	default 	bold

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+Name=Vysypať kôš
+Icon=user-trash-full
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name = Vysypať kôš
+MimeTypes=inode/directory;
+SelectionCount=1
+Exec = trash-empty

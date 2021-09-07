@@ -1,0 +1,287 @@
+###################################
+###		MOCPlayer config file		###
+###################################
+
+
+#####################
+#	General settings	#
+#####################
+MusicDir = /home/${USER}/Hudba
+MOCDir = /home/${USER}/.moc			
+StartInMusicDir = yes					
+Sort = FileName	
+ShowStreamErrors = no
+MP3IgnoreCRCErrors = yes			
+SoundDriver = ALSA					
+ALSADevice = default
+Equalizer_SaveState = yes
+ShowHiddenFiles = no
+HideFileExtension = no
+ShowFormat = yes
+ShowTime = yes
+ShowTimePercent = no
+Softmixer_SaveState = no
+AutoLoadLyrics = yes
+FileNamesIconv = yes
+UseMMap = no
+UseMimeMagic = no
+Allow24bitOutput = no
+
+#SeekTime = 1
+#SilentSeekTime = 5
+#UseRealtimePriority = no
+
+
+#########################
+#	Set playback toggles	#
+#########################
+Repeat = yes
+Shuffle = no
+AutoNext = yes
+
+
+#####################
+#		Themes		#
+#####################
+Theme = nordic
+#XTermTheme = transparent-background
+#UseCursorSelection = no
+#SetXtermTitle = yes
+#SetScreenTitle = yes
+#BlockDecorators = "`\"'"
+#MessageLingerTime = 3
+#PrefixQueuedMessages = yes
+#ErrorMessagesQueued = "!"
+
+
+#####################
+#		Playlists		#
+#####################
+PlaylistNumbering = yes
+SavePlaylist = yes
+#SyncPlaylist = yes
+FollowPlayedFile = yes
+CanStartInPlaylist = yes
+#PlaylistFullPaths = yes
+#QueueNextSongReturn = yes
+
+
+#############################
+#	Encoding & Keymaps		#
+#############################
+ASCIILines = no
+#ID3v1TagsEncoding = WINDOWS-1250
+#UseRCC = yes
+#UseRCCForFilesystem = yes
+#EnforceTagsEncoding = no
+#NonUTFXterm = no
+Keymap = my_keymap
+
+
+#############################
+#	Main window layouts		#
+#############################
+#Layout1 = directory(0,0,50%,100%):playlist(50%,0,FILL,100%)
+#Layout2 = directory(0,0,100%,100%):playlist(0,0,100%,100%)
+#Layout3 = ""
+Layout1 = playlist(50%,50%,50%,50%)
+#Layout1 = directory(0,45,100%,FILL):playlist(0,0,100%,40)
+#Layout2 = directory(0,10,100%,FILL):playlist(0,0,100%,10)
+#Layout3 = directory(0,0,30%,100%):playlist(50,0,FILL,FILL)
+
+
+#####################
+#		FastDirs		#
+#####################
+Fastdir1 = ${MusicDir}/<<-JAPAN->>
+Fastdir2 = ${MusicDir}/<<-PLAYLIST->>
+Fastdir3 = ${MusicDir}/<<-METAL->>
+Fastdir4 = ${MusicDir}/<<-MUSICAL->>
+Fastdir5 = ${MusicDir}/<<-MUSIC->>
+Fastdir6 = /home/${USER}/Stiahnuté
+#Fastdir7 =
+#Fastdir8 =
+#Fastdir9 =
+#Fastdir10 =
+
+
+#########################
+#	Default FormatString	#
+#########################
+#   %n - Track number
+#   %a - Artist
+#   %A - Album
+#   %t - Title
+#   %(X:TRUE:FALSE) - Ternary expression: if X exists, do TRUE,
+#                     otherwise FALSE.  The escape character must
+#                     be doubled (i.e., '\\').  (See zshmisc
+#                     documentation for more information.)
+#
+#FormatString = "%(n:%n :)%(a:%a - :)%(t:%t:)%(A: \(%A\):)"
+
+
+#########################
+#	Preferred Decoders	#
+#########################
+#PreferredDecoders  = aac(aac,ffmpeg):m4a(ffmpeg)
+#PreferredDecoders += mpc(musepack,*,ffmpeg):mpc8(musepack,*,ffmpeg)
+#PreferredDecoders += sid(sidplay2):mus(sidplay2)
+#PreferredDecoders += wav(sndfile,*,ffmpeg)
+#PreferredDecoders += wv(wavpack,*,ffmpeg)
+#PreferredDecoders += audio/aac(aac):audio/aacp(aac):audio/m4a(ffmpeg)
+#PreferredDecoders += audio/wav(sndfile,*)
+#PreferredDecoders += ogg(vorbis,ffmpeg):oga(vorbis,ffmpeg):ogv(ffmpeg)
+#PreferredDecoders += opus(ffmpeg)
+#PreferredDecoders += spx(speex)
+#PreferredDecoders += application/ogg(vorbis):audio/ogg(vorbis)
+
+
+#################################
+#	Resample Methods & Rate		#
+#################################
+#
+#    SincBestQuality
+#    SincMediumQuality
+#    SincFastest
+#    ZeroOrderHold
+#    Linear
+#
+#ResampleMethod = Linear
+#ForceSampleRate = 0
+
+
+#####################
+#		Cahce		#
+#####################
+#TagsCacheSize = 256
+
+
+#################################
+#	Executing external commands	#
+#################################
+## Executing external commands (1 - 10)
+## Invoked with key commands (F1 - F10 by default)
+#
+# Some arguments are substituted before executing:
+#
+#     %f - file path
+#     %i - title made from tags
+#     %S - start block mark (in seconds)
+#     %E - end block mark (in seconds)
+#
+# Data from tags can also be substituted:
+#
+#     %t - title
+#     %a - album
+#     %r - artist
+#     %n - track
+#     %m - time of the file (in seconds)
+#
+# Examples:   ExecCommand1 = "cp %f /mnt/usb_drive"
+#             ExecCommand2 = "/home/joe/now_playing %I"
+#
+#ExecCommand1 =
+#ExecCommand2 = "/home/${USER}/.moc/scripts/mrskinny"
+#ExecCommand3 = "/home/${USER}/.moc/scripts/moc-lyrics --artist %r --title %t"
+#ExecCommand4 =
+#ExecCommand5 =
+#ExecCommand6 =
+#ExecCommand7 =
+#ExecCommand8 =
+#ExecCommand9 =
+#ExecCommand10 =
+
+
+#####################################
+#			ModPlug options			#
+#####################################
+## Self-describing ModPlug options (with 'yes' or 'no' values).
+#ModPlug_Oversampling = yes
+#ModPlug_NoiseReduction = yes
+#ModPlug_Reverb = no
+#ModPlug_MegaBass = no
+#ModPlug_Surround = no
+
+
+## ModPlug resampling mode.
+# Valid values are:
+#
+#     FIR -      8 tap fir filter (extremely high quality)
+#     SPLINE -   Cubic spline interpolation (high quality)
+#     LINEAR -   Linear interpolation (fast, good quality)
+#     NEAREST -  No interpolation (very fast, extremely bad sound quality)
+#
+#ModPlug_ResamplingMode = FIR
+
+
+## Other self-describing ModPlug audio characteristic options.
+# (Note that the 32 bit sample size seems to be buggy.)
+#ModPlug_Channels = 2			# 1 or 2 channels
+#ModPlug_Bits = 16				# 8, 16 or 32 bits
+#ModPlug_Frequency = 44100          	# 11025, 22050, 44100 or 48000 Hz
+#ModPlug_ReverbDepth = 0            	# 0 (quiet) to 100 (loud)
+#ModPlug_ReverbDelay = 0            	# Delay in ms (usually 40-200ms)
+#ModPlug_BassAmount = 0             	# 0 (quiet) to 100 (loud).
+#ModPlug_BassRange = 10             	# Cutoff in Hz (10-100).
+#ModPlug_SurroundDepth = 0          	# Surround level 0(quiet)-100(heavy).
+#ModPlug_SurroundDelay = 0          	# Surround delay in ms, usually 5-40ms.
+#ModPlug_LoopCount = 0              	# 0 (never), n (times) or -1 (forever)
+
+
+## Self-describing TiMidity audio characteristic options.
+#TiMidity_Rate = 44100              	# Between 8000 and 48000
+#TiMidity_Bits = 16                 	# 8 or 16
+#TiMidity_Channels = 2              	# 1 or 2
+#TiMidity_Volume = 100		# 0 to 800
+#TiMidity_Config =
+
+
+## Self-describing SidPlay2 audio characteristic options.
+#SidPlay2_DefaultSongLength = 180   	# If not in database (in seconds)
+#SidPlay2_MinimumSongLength = 0     	# Play at least n (in seconds)
+#SidPlay2_Frequency = 44100         		# 4000 to 48000
+#SidPlay2_Bits = 16                 			# 8 or 16
+#SidPlay2_Optimisation = 0          		# 0 (worst quality) to 2 (best quality)
+#SidPlay2_Database =
+
+
+## SidPlay2 playback Mode:
+#
+#     "M": Mono (best for many SIDs)
+#     "S": Stereo
+#     "L"/"R": Left / Right
+#
+#SidPlay2_PlayMode = "M"
+
+
+## Use start-song information from SID ('yes') or start at first song
+# ('no').
+#SidPlay2_StartAtStart = yes
+
+
+## Play sub-tunes
+#SidPlay2_PlaySubTunes = yes
+
+
+#############################
+#	OnSongChange &	OnStop	#
+#############################
+## Run the OnSongChange command when a new song starts playing.
+#
+#     %a artist
+#     %r album
+#     %f filename
+#     %t title
+#     %n track
+#     %d file duration in XX:YY form
+#     %D file duration, number of seconds
+#
+# No pipes/redirects can be used directly, but writing a shell script
+# can do the job.
+#
+# Example:    OnSongChange = "/home/jack/.moc/myscript %a %r"
+#
+OnSongChange = "/home/${USER}/.moc/scripts/dunst_mocp.sh %a %t %r"
+RepeatSongChange = yes
+#OnStop = "/home/jack/.moc/myscript_on_stop"
+

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Action
+Name=Záloha súborov
+Icon=edit-copy
+Profiles = on_file;
+
+[X-Action-Profile on_file]
+Name = Záloha súborov
+MimeTypes = text/plain;application/zip;application/x-7z-compressed;
+Exec = cp %F "/home/lombardo/Media/Záloha/### BACKUP ###/Súbory/"

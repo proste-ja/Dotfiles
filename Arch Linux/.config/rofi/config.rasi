@@ -1,0 +1,37 @@
+configuration {
+	columns: 1;
+    	font: "Iosevka Nerd Font 12";
+	bw: 2;
+	eh: 1;
+	location: 0;
+	fixed-num-lines: true;
+	show-icons: false;
+	disable-history: false;
+	case-sensitive: false;
+	cycle: true;
+	sidebar-mode: true;
+	auto-select: true;
+	tokenize: true;
+	line-margin: 2;
+	separator-style: "dash";
+	hide-scrollbar: true;
+	fullscreen: false;
+	fake-transparency: false;
+	fake-background: "screenshot";
+	display-window: "";
+	display-windowcd: "";
+	display-run: "";
+	display-ssh: "";
+	display-drun: "";
+	display-combi: "";
+	display-top: "";
+	display-keys: "";
+	display-calc: "";
+	display-filebrowser: "";
+	color-normal: "#2e3440, #3b4252, #2e3440, #2e3440, #434c5e";
+	color-urgent: "#2e3440, #3b4a53, #2e3440, #2e3440, #434c5e";
+	color-active: "#2e3440, #3b4a53, #2e3440, #2e3440, #434c5e";
+	color-window: "#2e3440, #434c5e, #3b4a53";
+}
+
+@import "/home/lombardo/.config/rofi/themes/nordic-paper-float.rasi"

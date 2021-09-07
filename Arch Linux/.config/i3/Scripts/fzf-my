@@ -1,0 +1,8 @@
+#!/bin/bash
+
+fzf -i --multi --exact --no-sort --cycle --reverse --ansi --no-hscroll --inline-info \
+	--bind=right:half-page-down,left:half-page-up \
+	--margin="2%,1%,1%,2%" \
+	--color=info:107,spinner:167,pointer:144,marker:215,fg+:144 \
+	--preview='[[ $(file --mime {}) =~ binary ]] && echo {}  "\e[31m\e[1m\nbinárny súbor" ||
+                 cat {} 2> /dev/null | head -500'

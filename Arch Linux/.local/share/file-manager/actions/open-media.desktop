@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Action
+Name=Zistiť informácií o médiu
+Icon=exifinfo
+Profiles = on_file;
+
+[X-Action-Profile on_file]
+Name = Zistiť informácií o médiu
+MimeTypes = audio/*;video/*;
+Exec = mediainfo-gui %f

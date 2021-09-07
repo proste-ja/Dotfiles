@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+alacritty --config-file /home/lombardo/.config/alacritty/alacritty-apps.yml \
+	--title mocp \
+	--command mocp

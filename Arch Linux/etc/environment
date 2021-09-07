@@ -1,0 +1,33 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+##############
+##	Export	##
+##############
+#BROWSER=/usr/bin/firefox
+#EDITOR=/usr/bin/nano -wtLOW -$
+#
+#
+#############
+##	GTK2+	#
+#############
+#QT_QPA_PLATFORMTHEME=gtk2
+QT_QPA_PLATFORMTHEME=qt5ct
+#QT_STYLE_OVERRIDE=gtk
+#XDG_CURRENT_DESKTOP=kde
+#
+#
+#############
+##	Java	#
+#############
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd_hrgb'
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+_JAVA_OPTIONS='-Dswing.aatext=true
+_JAVA_OPTIONS='-Dsun.java2d.xrender=true
+JAVA_FONTS=/usr/share/fonts/TTF
+export FT2_SUBPIXEL_HINTING=0
+export FT2_SUBPIXEL_HINTING=1
+export FT2_SUBPIXEL_HINTING=2

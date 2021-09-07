@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+Name=Otvoriť priečinok v termináli
+Tooltip=Otvoriť priečinok v termináli
+Icon=terminal
+Profiles = on_folder;
+
+[X-Action-Profile on_folder]
+Name = Otvoriť priečinok v termináli
+MimeTypes=inode/directory;
+SelectionCount=1;
+Exec = termite -d %f

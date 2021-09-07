@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+Tooltip=Vyhľadať v tomto priečinku
+Name=Vyhľadať v tomto priečinku
+Icon=filefind
+Profiles=on_folder;
+
+[X-Action-Profile on_folder]
+Name=Vyhľadať v tomto priečinku
+MimeTypes=inode/directory;
+SelectionCount=1;
+Exec=mate-search-tool --hidden --path=%f

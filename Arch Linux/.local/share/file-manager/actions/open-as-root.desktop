@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+Tooltip=Otvoriť priečinok ako správca
+Name=Otvoriť priečinok ako správca
+Icon=gtk-open
+Profiles=on_folder;
+
+[X-Action-Profile on_folder]
+Name=Vyhľadať v tomto priečinku
+MimeTypes=inode/directory;
+SelectionCount=1
+Exec=xsudo pcmanfm %f

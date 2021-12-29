@@ -32,6 +32,8 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 
 # Screenshots
 
+![](Screenshots/Previews/preview-polybar-nordic-transparent_1.jpg)
+
 ![](Screenshots/Previews/preview-nordic-polybar-i3gaps-clear.jpg)
 
 ![](Screenshots/Previews/preview-nordic-polybar-i3gaps.jpg)

@@ -56,9 +56,9 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 #######################
 ##		Aliases			##
 #######################
-if [ -f ~/.zsh_aliases ]; then
-  . ~/.zsh_aliases
-fi
+#if [ -f ~/.zsh_aliases ]; then
+#  . ~/.zsh_aliases
+#fi
 
 
 
@@ -66,14 +66,16 @@ fi
 ##		Sources		##
 ####################
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 #source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
+source /usr/share/zsh/share/antigen.zsh
 source $HOME/.zsh_autocomplete
 source $HOME/.zsh_prompt
 #source $HOME/.zsh_powerline
+source $HOME/.zsh_aliases
 
 
 
@@ -188,6 +190,23 @@ key[Delete]=${terminfo[kdch1]}
 
 
 
+#########################################
+##		ZSH Antigen Plugin configuration	##
+#########################################
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+#antigen theme robbyrussell
+antigen apply
+
+
+
 ##################################
 ##		ZSH Plugins configuration	##
 ##################################
@@ -234,5 +253,5 @@ done
 ####################
 #[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
 $HOME/.config/i3/Scripts/scripts/ufetch-arch
-
+#eval "$(starship init zsh)"
 

@@ -25,15 +25,19 @@ configuration {
     background: #2e3440;
     border-color: #2e3440;
     text-color: #434c5e;
-    blue:  	#81a1c1;
-    white: #d8dee9;
+    blue:  	#5A7087;
+    green:	#475e5d;
+    red:		#765455;
+    yellow:	#625843;
+    brown:	#76777a;
+    white: 	#d8dee9;
     
     spacing: 2;
     background-color: #00000000;
     transparency: "screenshot";
     anchor: center;
     location: center;
-    font: "Iosevka Nerd Font 17";
+    font: "Iosevka Nerd Font 16";
 }
 window {
     transparency: "screenshot";
@@ -44,44 +48,53 @@ window {
     children: [ windowborder ];
 }
 windowborder {
-    border: 4;
-    border-color:	@border-color;
+    border: 3;
+    border-color:	@blue;
+    border-radius: 45;
     children: [ mainbox ];
 }
 mainbox {
     spacing: 3;
     padding: 0;
-    border: 3;
+    border: 5;
     border-color:	@background-color;
 }
 message {
     border: 3;
     padding: 1em;
     background-color: @background;
-    text-color: @foreground;
+    border-radius: 0;
+    text-color: @blue;
 }
 textbox normal {
-    text-color: @foreground;
+    text-color: @blue;
     padding: 0;
 }
 listview {
     reverse: false;
     fixed-height: true;
     border: 2;
-    padding: 10;
+    padding: 20 10 10 20;
     columns: 1;
-    text-color: @foreground;
+    text-color: @blue;
     background-color: @background;
+    border-radius: 40;
 }
 element {
     padding: 4 0 4 8;
-    highlight: bold underline;
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    padding: 4 0 4 8;
+    highlight: bold underline #475e5d;
 }
 element selected {
     border: 1;
-    border-color:	@light-foreground;
-    text-color: @foreground;
+    border-color:	@blue;
+    text-color: @blue;
     background-color: @background;
+    border-radius: 15;
 }
 scrollbar {
     border: 0;
@@ -93,8 +106,9 @@ inputbar {
     padding: 10 10 10 18;
     text-color: @foreground;
     background-color: @background;
+    border-radius: 10 10 0 0;
     index: 0;
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    children:   [ textbox-prompt-colon,prompt,entry,case-indicator ];
 }
 inputbar normal {
     text-color: @foreground;
@@ -119,13 +133,16 @@ button selected {
 }
 prompt {
     spacing:    0;
+    border-radius: 10;
     background-color: @background;
     text-color: @foreground;
 }
 textbox-prompt-colon {
-    expand:     false;
+    expand: false;
     margin:     0 1em 0 0;
+    background-color: @background;
     text-color: @foreground;
+    border-radius: 10;
 }
 entry {
     spacing: 0;
@@ -135,10 +152,9 @@ entry {
 }
 case-indicator {
     spacing:    0;
-    text-color: @normal-foreground;
+    text-color: @foreground;
     background-color: @background;
 }
-
 error-message {
     border: 2;
     padding: 1em;

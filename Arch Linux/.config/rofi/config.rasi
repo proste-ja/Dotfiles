@@ -34,4 +34,4 @@ configuration {
 	color-window: "#2e3440, #434c5e, #3b4a53";
 }
 
-@import "/home/lombardo/.config/rofi/themes/nordic-paper-float.rasi"
+@import "/home/lombardo/.config/rofi/themes/nordic-paper-float-round.rasi"

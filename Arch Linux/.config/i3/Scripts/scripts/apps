@@ -1,0 +1,38 @@
+#!/bin/bash
+
+export TERM=xterm
+
+OPT=$(echo -e '✘  Cancel\n Resilio\n  Plex\n Stream\n  LibreOffice\n  Disky\n  Bleachbit\n  Handbrake\n  Discord\n  Telegram\n  Etcher\n  Calculator\n  Htop\n  Callibre-Update\n  Resilio-Auth\n  PulseAudio' \
+	| rofi -markup-rows -hide-scrollbar -no-fullscreen -no-custom -no-lazy-grab \
+    	-location 0 -bw 2 -eh 1 \
+	-theme "$HOME/.config/polybar/themes/nordic-paper-float-menu.rasi" \
+        -theme-str '#window {x-offset: 0%; y-offset: -20%;}' \
+        -theme-str '#window {width: 600;}' \
+        -theme-str '#mode-switcher {enabled: false;}' \
+        -theme-str '#inputbar {enabled: false;}' \
+        -theme-str '#listview {lines: 8;}' \
+	-theme-str '#listview {columns: 2;}' \
+	-dmenu -i -p 'Apps Menu')
+
+if [ ${#OPT} -gt 0 ]
+then
+    case $OPT in
+	*Cancel) ;;
+	*Resilio) chromium "http://127.0.0.1:8888/gui/" ;;
+	*Plex) chromium "https://app.plex.tv/desktop/" ;;
+	*LibreOffice) libreoffice-fresh ;;
+      	*Disky) gnome-disks ;;
+      	*Bleachbit) bleachbit ;;
+      	*Handbrake) GTK_THEME=Nordic-darker-standard-buttons ghb ;;
+      	*Discord) Discord ;;
+      	*Telegram) Telegram ;;
+      	*Etcher) balena-etcher ;;
+      	*Calculator) $HOME/.config/i3/Scripts/roficalc-my ;;
+      	*Htop) $HOME/.config/i3/Scripts/htop-my ;;
+      	*Callibre-Update) $HOME/Verejné/Programy/calibre-installation.sh ;;
+	*Resilio-Auth) $HOME/.config/i3/Scripts/scripts/resilio-permission ;;
+	*PulseAudio) $HOME/.config/i3/Scripts/scripts/pulseaudio ;;
+      	*) ;;
+    esac
+fi
+

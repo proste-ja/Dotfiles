@@ -165,6 +165,7 @@ bindsym $mod+Ctrl+v workspace $WS10
 bindsym $mod+Ctrl+s workspace $WS11
 bindsym $mod+Ctrl+q workspace $WS12
 bindsym $mod+Ctrl+z workspace $WS13
+bindsym $mod+Ctrl+y workspace $WS14
 
 ## switch to workspace
 bindsym $mod1+1 workspace 1
@@ -200,6 +201,7 @@ bindsym $mod1+Ctrl+v workspace $WS10
 bindsym $mod1+Ctrl+s workspace $WS11
 bindsym $mod1+Ctrl+q workspace $WS12
 bindsym $mod1+Ctrl+z workspace $WS13
+bindsym $mod1+Ctrl+y workspace $WS14
 
 ## move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -222,34 +224,36 @@ bindsym $mod+Shift+Ctrl+7 move container to workspace 17
 bindsym $mod+Shift+Ctrl+8 move container to workspace 18
 bindsym $mod+Shift+Ctrl+9 move container to workspace 19
 bindsym $mod+Shift+Ctrl+10 move container to workspace 20
-bindsym $mod+Shift+Ctrl+h workspace $WS1
-bindsym $mod+Shift+Ctrl+m workspace $WS2
-bindsym $mod+Shift+Ctrl+n workspace $WS3
-bindsym $mod+Shift+Ctrl+p workspace $WS4
-bindsym $mod+Shift+Ctrl+i workspace $WS5
-bindsym $mod+Shift+Ctrl+b workspace $WS6
-bindsym $mod+Shift+Ctrl+j workspace $WS7
-bindsym $mod+Shift+Ctrl+o workspace $WS8
-bindsym $mod+Shift+Ctrl+g workspace $WS9
-bindsym $mod+Shift+Ctrl+v workspace $WS10
-bindsym $mod+Shift+Ctrl+s workspace $WS11
-bindsym $mod+Shift+Ctrl+q workspace $WS12
-bindsym $mod+Shift+Ctrl+z workspace $WS13
+bindsym $mod+Shift+Ctrl+h move container to workspace $WS1
+bindsym $mod+Shift+Ctrl+m move container to workspace $WS2
+bindsym $mod+Shift+Ctrl+n move container to workspace $WS3
+bindsym $mod+Shift+Ctrl+p move container to workspace $WS4
+bindsym $mod+Shift+Ctrl+i move container to workspace $WS5
+bindsym $mod+Shift+Ctrl+b move container to workspace $WS6
+bindsym $mod+Shift+Ctrl+j move container to workspace $WS7
+bindsym $mod+Shift+Ctrl+o move container to workspace $WS8
+bindsym $mod+Shift+Ctrl+g move container to workspace $WS9
+bindsym $mod+Shift+Ctrl+v move container to workspace $WS10
+bindsym $mod+Shift+Ctrl+s move container to workspace $WS11
+bindsym $mod+Shift+Ctrl+q move container to workspace $WS12
+bindsym $mod+Shift+Ctrl+z move container to workspace $WS13
+bindsym $mod+Shift+Ctrl+y move container to workspace $WS14
 
 ## set workspaces
-set $WS1 1:
+set $WS1 1:
 set $WS2 2:
 set $WS3 3:
-set $WS4 4:
+set $WS4 4:
 set $WS5 5:
-set $WS6 6:
+set $WS6 6:
 set $WS7 7:
 set $WS8 8:
 set $WS9 9:
-set $WS10 10:
-set $WS11 11:
-set $WS12 12:
-set $WS13 13:
+set $WS10 10:
+set $WS11 11:
+set $WS12 12:
+set $WS13 13:
+set $WS14 14:
 
 ## navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -317,10 +321,10 @@ bindsym XF86Forward exec mocp --next
 #				Theme colors					#
 #############################################
 
-## class                 			border		backgr.    	text			indicator	child_border
+## class                 		border			backgr.    		text		indicator		child_border
 client.focused			#2e3440		#2e3440		#e5e9f0		#2e3440		#2e3440
 client.focused_inactive	#2e3440		#2e3440		#e5e9f0		#2e3440		#2e3440
-client.unfocused			#434c5e		#434c5e		#e5e9f0		#434c5e		#434c5e
+client.unfocused		#434c5e		#434c5e		#e5e9f0		#434c5e		#434c5e
 client.urgent 			#2e3440		#2e3440		#e5e9f0		#2e3440		#2e3440
 #client.urgent 			#81a1c1		#81a1c1		#e5e9f0		#81a1c1		#81a1c1
 client.placeholder      	#434c5e		#434c5e		#e5e9f0		#434c5e		#434c5e
@@ -406,7 +410,10 @@ mode "$powermenu" {
 
 exec_always --no-startup-id ~/.config/polybar/launch
 exec --no-startup-id i3-msg 'workspace $WS1'
-exec --no-startup-id feh --bg-fill ~/Obrázky/wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/Obrázky/wallpaper.jpg
+exec_always --no-startup-id autotiling
+#exec /usr/bin/pulseaudio --start --log-target=syslog
+#exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 #exec --no-startup-id "sh -c 'sleep 11; ~/.config/i3/Scripts/update_dunst'"
 #exec --no-startup-id ~/.config/i3/Scripts/scripts/update_dunst
 
@@ -418,50 +425,49 @@ exec --no-startup-id feh --bg-fill ~/Obrázky/wallpaper.jpg
 assign [class="^Alacritty$" title="^neomutt$"] $WS2
 assign [class="^Alacritty$" title="^newsboat$"] $WS3
 assign [class="^Alacritty$" title="^mocp$"] $WS4
+assign [class="^Pragha$"] $WS4
 assign [class="^firefox$"] $WS5
-assign [class="^Firefox$"] $WS5
-assign [class="^firefoxdeveloperedition$"] $WS5
-assign [class="^Firefox Developer Edition$"] $WS5
-assign [class="^Nightly$"] $WS5
+#assign [class="^firefox$" instance="^Navigator$"] $WS5
+assign [class="^Tor Browser$"] $WS5
+assign [class="^Vivaldi-stable$"] $WS5
 assign [class="^Opera$"] $WS5
-assign [class="^Chromium$"] $WS5
 assign [class="^Brave-browser$"] $WS5
+assign [class="^Chromium$"] $WS13
 assign [class="^qBittorrent$"] $WS6
-assign [class="^Tixati$"] $WS6
-assign [class="^Transmission-gtk$"] $WS6
-assign [class="^cz-vity-freerapid-core-MainApp$"] $WS7
-assign [class="^JDownloader$"] $WS7
 assign [class="^org-jdownloader-update-launcher-JDLauncher$"] $WS7
 assign [class="^java-lang-Thread$"] $WS7
-assign [class="^ClipGrab$"] $WS7
-assign [class="^4K Video Downloader$"] $WS7
-assign [class="^Wps$"] $WS8
-assign [class="^Et$"] $WS8
-assign [class="^Wpp$"] $WS8
-assign [class="^Wpspdf$"] $WS8
+assign [class="^Free Download Manager$"] $WS7
+assign [class="^wps$"] $WS8
+assign [class="^et$"] $WS8
+assign [class="^wpp$"] $WS8
+assign [class="^pdf" instance="wpspdf"] $WS8
 assign [class="^DesktopEditors$"] $WS8
-assign [class="^org.libreoffice$"] $WS8
-assign [class="(?i)libreoffice-startcenter"] $WS8
-assign [class="(?i)libreoffice-*"] $WS8
-assign [class="(?i)libreoffice"] $WS8
+assign [class="^ONLYOFFICE Desktop Editors$"] $WS8
+assign [class="^libreoffice-startcenter$"] $WS8
+assign [class="^libreoffice-writer$"] $WS8
 assign [class="(?i)soffice"] $WS8
-assign [class="Gimp" window_role = "gimp-image-window"] $WS9
-assign [class="Gimp" window_role = "gimp-preferences"] $WS9
-#assign [class="Gimp" window_role="gimp-toolbox"] $WS10
-#assign [class="Gimp" window_role="gimp-dock"] $WS10
-assign [class="^Hexchat$"] $WS12
-assign [class="^Alacritty$" title="^htop$"] $WS12
-assign [class="^Alacritty$" title="^pacui$"] $WS12
-assign [class="^Simple-scan$"] $WS12
-assign [class="^Signal Beta$"] $WS12
-assign [class="^Ghb$"] $WS11
-assign [class="luajit"] $WS10
+assign [class="(?i)Gimp"] $WS9
 assign [class="calibre" instance="calibre-ebook-viewer"] $WS10
 assign [class="calibre" instance="calibre-edit-book"] $WS11
-assign [class="^sigil$"] $WS11
 assign [class="^calibre$"] $WS12
-assign [class="^etcher-electron$"] $WS12
-assign [class="^Etcher-electron$"] $WS12
+assign [class="^fr.handbrake.ghb$"] $WS12
+assign [class="^Vocal$"] $WS12
+assign [class="^Weston Compositor$"] $WS13
+assign [class="^scrcpy$"] $WS13
+assign [class="^vysor$"] $WS13
+assign [class="^Plex$"] $WS13
+assign [class="^Hexchat$"] $WS13
+assign [class="^Signal Beta$"] $WS13
+assign [class="^TelegramDesktop$"] $WS13
+assign [class="^discord$"] $WS13
+assign [class="^firefox$" instance="^Plex — Mozilla Firefox$"] $WS13
+assign [class="^Alacritty$" title="^weston$"] $WS14
+assign [class="^Alacritty$" title="^scrcpy$"] $WS14
+assign [class="^Alacritty$" title="^htop$"] $WS14
+assign [class="^Alacritty$" title="^pacui$"] $WS14
+assign [class="^LosslessCut$"] $WS14
+assign [class="^Simple-scan$"] $WS14
+assign [class="^balena-etcher-electron$"] $WS14
 
 
 #############################################
@@ -470,6 +476,7 @@ assign [class="^Etcher-electron$"] $WS12
 
 #bindsym $mod+Return exec exo-open --launch TerminalEmulator
 bindsym $mod+Return exec alacritty
+bindsym $mod1+Return exec urxvt
 #bindsym $mod+BackSpace exec exo-open --launch FileManager
 bindsym $mod+BackSpace exec pcmanfm
 bindsym $mod1+BackSpace exec thunar
@@ -505,8 +512,8 @@ bindsym $mod1+c exec "$HOME/.config/i3/Scripts/colorsskull-my"
 #bindsym $mod+x exec "xrandr --output HDMI-0 --mode 1920x1080 --rate 60.05 --output DVI-I-1 --mode 1366x768 --rate 59.79 --left-of HDMI-0 && nitrogen --restore; exec notify-send 'Sekundárny monitor pripojený'"
 #bindsym $mod1+x exec "xrandr  --output HDMI-0 --off --output DVI-I-1 --auto; exec notify-send 'Sekundárny monitor odpojený'"
 bindsym $mod1+Ctrl+d --release exec "killall dunst; exec notify-send 'Dunst reštartovaný'"
-bindsym $mod+Shift+d exec "gvfs-trash --empty; exec notify-send 'Kôš vyprázdnený'"
-bindsym $mod1+Shift+d exec "gvfs-trash $HOME/.cache/watch_later; exec notify-send 'História mpv odstránená'"
+bindsym $mod+Shift+d exec "trash-empty -f; exec notify-send 'Kôš vyprázdnený'"
+bindsym $mod1+Shift+d exec "rm -rf  $HOME/.cache/watch_later; exec notify-send 'História mpv odstránená'"
 
 ## Multimedia keys
 #bindsym XF86Mail exec "$HOME/.config/i3/Scripts/neomutt-my"
@@ -514,7 +521,9 @@ bindsym XF86Mail exec "firefox 'https://mail.google.com/mail/u/0/#inbox'"
 #bindsym XF86HomePage exec "$HOME/.config/i3/Scripts/newsboat-my"
 bindsym XF86HomePage exec feh --bg-fill ~/Obrázky/wallpaper.png
 bindsym XF86Tools exec "$HOME/.config/i3/Scripts/mocp-my"
-bindsym XF86Search exec firefox-developer-edition
+bindsym XF86Search exec firefox
+bindsym XF86Calculator exec "$HOME/.config/i3/Scripts/roficalc-my"
+#bindsym Tab exec "$HOME/.config/i3/Scripts/rofi-my"
 
 
 #############################################
@@ -523,7 +532,6 @@ bindsym XF86Search exec firefox-developer-edition
 
 for_window [class="Pinentry"] floating enable
 for_window [class="Yad"] floating enable
-for_window [class="^Alacritty$" title="^trash-dialog$"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="BleachBit"] floating enable
@@ -531,72 +539,38 @@ for_window [class ="Thunar" title="Hromadné premenovanie - premenovanie viacer�
 for_window [class="mpv"] floating enable, border none
 for_window [class="smplayer"] floating enable, border none
 for_window [class ="Firefox" instance="Navigator"] floating disable
-for_window [class ="Firefox" instance="Places"] floating enable
-for_window [class ="Firefox" title="Knižnica"] floating enable
-for_window [class ="firefoxdeveloperedition" title="Knižnica"] floating enable
-for_window [class ="Nightly" instance="Toplevel"] floating disable
-for_window [class ="Nightly" title="Knižnica"] floating enable
-for_window [class ="Nightly" instance="Navigator"] floating disable
-for_window [class ="Pale moon" instance="Navigator"] floating disable
-for_window [class ="Pale moon" instance="Places"] floating enable
+for_window [class ="Tor Browser" instance="Navigator"] floating disable
 for_window [class="Viewnior"] floating enable
 for_window [class="Evince"] floating enable
-for_window [instance="cz-vity-freerapid-core-MainApp"] floating disable
-for_window [instance="sun-awt-X11-XDialogPeer"] floating enable
-for_window [instance="sun-awt-X11-XDialogPeer"] floating disable
+for_window [class="XpdfReader"] floating enable
+#for_window [class="qBittorrent"] floating disable
+for_window [class="cz-vity-freerapid-core-MainApp"] floating disable
+#for_window [class ="org-jdownloader-update-launcher-JDLauncher"] floating disable
+for_window [class ="JDownloader" title="JDownloader 2"] floating disable
 for_window [class ="JDownloader" title="Zadajte Captcha pre uloz.to k pokračovaniu!"] floating enable
-for_window [class="Gimp" window_role = "gimp-dock"] floating disable
-for_window [class="Gimp" window_role = "gimp-toolbox"] floating disable
-for_window [class="Gimp" window_role = "gimp-toolbox-color-dialog"] floating enable
+for_window [class ="JDownloader" title="Ste si istí?"] floating enable
+for_window [class="^org-jdownloader-update-launcher-JDLauncher$"] sticky disable
+#for_window [class="^firefox$" title="^Plex — Mozilla Firefox$"] move container to workspace $WS13
+#for_window [class="^firefox$" title="^Sync Home | My Sync Device — Mozilla Firefox$"] move container to workspace $WS13
 
 
 #############################################
 #	Resize & Position & Move to worspace		#
 #############################################
 
-for_window [class="^Alacritty$" title="^trash-dialog$"] resize set 550 250
-#for_window [class="^Alacritty$" title="^trash-dialog$"] move absolute position 700 300
-for_window [class="Viewnior"] resize set 1280 720
-for_window [class="Viewnior"] move absolute position 50 25
-for_window [class="Evince"] resize set 1150 700
-for_window [class="Evince"] move absolute position 10 25
-for_window [class="BleachBit"] resize set 850 550
-for_window [class="BleachBit"] move absolute position 250 250
-for_window [class="Pavucontrol"] resize set 850 550
-for_window [class="Pavucontrol"] move absolute position 250 100
+for_window [floating_from = "auto"] move absolute position center
+for_window [class="Evince"] resize set 1610 1040
+for_window [class="Evince"] move position center
 for_window [class="Thunar" title="Hromadné premenovanie - premenovanie viacerých súborov naraz"] resize set 850 550
 for_window [class="Thunar" title="Hromadné premenovanie - premenovanie viacerých súborov naraz"] move absolute position 480 180
-for_window [class="smplayer"] resize set 1150 700
-for_window [class="smplayer"] move absolute position 250 100
-for_window [class ="Firefox" window_role="Places"] resize set 1024 600
-for_window [class ="Firefox" window_role="Places"] move absolute position 135 100
-for_window [class ="Firefox" instance="Places"] resize set 1024 600
-for_window [class ="Firefox" instance="Places"] move absolute position 135 100
-for_window [class ="Firefox" instance="Library"] resize set 1024 600
-for_window [class ="Firefox" instance="Library"] move absolute position 135 100
-for_window [class ="Firefox" title="Places"] resize set 1024 600
-for_window [class ="Firefox" title="Places"] move absolute position 135 100
-for_window [class ="Firefox" title="Library"] resize set 1024 600
-for_window [class ="Firefox" title="Library"] move absolute position 135 100
-for_window [class ="firefoxdeveloperedition" title="Knižnica"] resize set 1024 600
-for_window [class ="firefoxdeveloperedition" title="Knižnica"] move absolute position 135 100
-for_window [class ="Nightly" title="Knižnica"] resize set 1024 600
-for_window [class ="Nightly" title="Knižnica"] move absolute position 135 100
-for_window [class ="Pale moon" instance="Places"] resize set 1024 600
-for_window [class ="Pale moon" instance="Places"] move absolute position 135 100
-for_window [class ="JDownloader" title="Zadajte Captcha pre uloz.to k pokračovaniu!"] resize set 900 700
-for_window [class ="JDownloader" title="Zadajte Captcha pre uloz.to k pokračovaniu!"] move absolute position 250 100
-for_window [class ="JDownloader" title="Properties for Fully automated remote Captcha Solving via 9kw.eu"] resize set 1130 750
-for_window [class ="JDownloader" title="Properties for Fully automated remote Captcha Solving via 9kw.eu"] move absolute position 345 55
 for_window [class="Gimp" window_role = "gimp-file-open"] resize set 1024 600
-for_window [class="Gimp" window_role = "gimp-file-open"] move absolute position 135 100
 for_window [class="Gimp" window_role = "gimp-file-save"] resize set 1024 600
-for_window [class="Gimp" window_role = "gimp-file-save"] move absolute position 135 100
 for_window [class="Gimp" window_role = "gimp-file-export"] resize set 1024 600
-for_window [class="Gimp" window_role = "gimp-file-export"] move absolute position 135 100
 for_window [class="Gimp" window_role = "gimp-toolbox-color-dialog"] resize set 600 400
-for_window [class="Gimp" window_role = "gimp-toolbox-color-dialog"] move absolute position 135 100
-for_window [window_role = "GtkFileChooserDialog"] resize set 1024 600
-for_window [window_role = "GtkFileChooserDialog"] move absolute position center
-for_window [class ="Mkvextract-gtk "title="Select a File"] move absolute position center
-
+#for_window [class="qBittorrent"] resize set 1250 750
+#for_window [class="qBittorrent"] move absolute position 330 150
+for_window [class="qBittorrent" window_role="Odstrániť torrent(y)"] resize set 250 75
+for_window [class="qbittorrent" window_role="Odstrániť torrent(y)"] move absolute position 330 150
+for_window [class ="JDownloader" title="Zadajte Captcha pre uloz.to k pokračovaniu!"] resize set 900 700
+for_window [class ="JDownloader" title="Ste si istí?"] resize set 900 700
+for_window [class ="JDownloader" title="Properties for Fully automated remote Captcha Solving via 9kw.eu"] resize set 1130 750

@@ -30,8 +30,8 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 * **Notify:** dunst 
 
 
-* **Running:** sys-info-full, moc
-
+* **Running:** sys-info-full, moc, i3lock-color, rofi, powermenu, shots
+  
 
 # Screenshots
 

@@ -22,7 +22,7 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 
 
 * **Emulator:** termite
-* 
+ 
 
 * **Menu:** rofi 
 
@@ -77,9 +77,9 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 | Sound Equalizer | [pulseaudio-equalizer-ladspa](https://github.com/pulseaudio-equalizer-ladspa/equalizer) based on [swh-plugins](https://github.com/swh/ladspa) |
 | Network Manager | connman |
 | Terminal | [alacritty](https://github.com/alacritty/alacritty), [termite](https://github.com/thestinger/termite/) |
-| Terminal Colorscheme | [created by me](https://github.com/proste-ja/Dotfiles/blob/master/Arch%20Linux/.config/colors/colorscheme)) ([preview](https://github.com/proste-ja/Dotfiles/blob/master/Screenshots/colorscheme.png)) by [blocks](https://github.com/stark/Color-Scripts/blob/master/color-scripts/bloks)) |
+| Terminal Colorscheme | [created by me](https://github.com/proste-ja/Dotfiles/blob/master/Arch%20Linux/.config/colors/colorscheme) ([preview](https://github.com/proste-ja/Dotfiles/blob/master/Screenshots/colorscheme.png) by [blocks](https://github.com/stark/Color-Scripts/blob/master/color-scripts/bloks)) |
 | Shell | zsh |
-| Shell Theme | [created by me](https://github.com/proste-ja/Dotfiles/blob/master/Arch%20Linux/.zsh_prompt)) ([preview](https://github.com/proste-ja/Dotfiles/blob/master/Screenshots/zsh-prompt.png)) |
+| Shell Theme | [created by me](https://github.com/proste-ja/Dotfiles/blob/master/Arch%20Linux/.zsh_prompt) ([preview](https://github.com/proste-ja/Dotfiles/blob/master/Screenshots/zsh-prompt.png)) |
 | Powerline Theme | [edited](https://github.com/proste-ja/Dotfiles/blob/master/Arch%20Linux/.zsh_powerline) [powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k) ([preview](https://github.com/proste-ja/Dotfiles/blob/master/Screenshots/zsh-powerline.png)) |
 | Screenshot App | scrot, [flameshot](https://github.com/lupoDharkael/flameshot) |
 | System Optimizer | bleachbit |

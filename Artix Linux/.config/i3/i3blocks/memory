@@ -1,9 +1,0 @@
-#!/bin/sh
-
-memory=$(free -m | awk 'NR==2{printf "%0.0f\n",$3/$2*100}')
-   echo "${memory}%"
-
-case $BLOCK_BUTTON in
-    1) termite --title=htop -e htop & ;;
-esac
-exit 0

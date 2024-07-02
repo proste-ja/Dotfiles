@@ -1,6 +1,0 @@
-#!/bin/bash
-
-termite -e "$HOME/.config/i3/Scripts/scripts/updated"
-
-
-

@@ -1,8 +1,0 @@
-go_to_fast_dir1 = ^b
-go_to_fast_dir2 = ^p
-go_to_fast_dir3 = ^m
-go_to_fast_dir4 = ^h
-go_to_fast_dir5 = ^s
-go_to_fast_dir6 = ^d
-quit_client = Q
-quit = q

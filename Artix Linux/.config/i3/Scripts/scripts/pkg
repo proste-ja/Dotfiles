@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-termite -e "$HOME/.config/i3/Scripts/scripts/pkgsearch"

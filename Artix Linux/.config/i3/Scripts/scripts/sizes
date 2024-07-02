@@ -1,8 +1,0 @@
-#!/bin/bash
-
-expac -H M -Q  "%12m - \e[1m%n\e[0m %v" $( comm -23 <(pacman -Qq | sort) <(pacman -Qqg base | sort) ) | sort -n -r | \
-	fzf -i --multi --exact --no-sort --cycle --reverse --ansi --no-hscroll --inline-info \
-		--bind=right:half-page-down,left:half-page-up \
-		--margin="2%,1%,1%,2%" \
-		--color=info:107,spinner:167,pointer:144,marker:215,fg+:144 \
-		--preview='pacman -Qi {4} --color always'

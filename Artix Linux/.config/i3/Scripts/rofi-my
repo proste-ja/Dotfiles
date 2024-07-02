@@ -1,8 +1,0 @@
-#!/bin/bash
-
-export TERM=xterm
-rofi -modi window,windowcd,run,drun,calc,top -show run -sidebar-mode -no-sort \
-	-markup-rows -hide-scrollbar -no-fullscreen -no-custom -no-lazy-grab \
-	-location 0 -bw 2 -eh 1 -lines 13 \
-        -theme-str '#window {width: 800;}' \
-        -theme-str '#window {x-offset: -3%; y-offset: -13%;}'

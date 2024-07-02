@@ -1,0 +1,155 @@
+/**
+ * A floating box version of the paper theme.
+ *
+ * User: lombardo1981
+ * Copyright: Dave Davenport
+ * edited by lombardo1981
+ */
+configuration {
+
+    display-ssh:			"";
+    display-run:			"";
+    display-drun:			"";
+    display-window:		"";
+    display-windowcd:	"";
+    display-calc:			"";
+    display-top:			"";
+    display-keys:			"";
+    display-combi:		"";
+    show-icons: false;
+}
+
+* {
+    foreground:  #434c5e;
+    light-foreground: #434c5e;
+    background: #2e3440;
+    border-color: #2e3440;
+    text-color: #434c5e;
+    blue:  	#5A7087;
+    green:	#475e5d;
+    red:		#765455;
+    yellow:	#625843;
+    brown:	#76777a;
+    white: 	#d8dee9;
+    
+    spacing: 2;
+    background-color: #00000000;
+    transparency: "screenshot";
+    anchor: center;
+    location: center;
+    font: "Iosevka Nerd Font 12";
+}
+window {
+    transparency: "screenshot";
+    background-color: #00000000;
+    padding: 0 0 0.5em 0;
+    x-offset: 0;
+    y-offset: -10%;
+    children: [ windowborder ];
+}
+windowborder {
+    border: 3;
+    border-color:	@blue;
+    children: [ mainbox ];
+}
+mainbox {
+    spacing: 3;
+    padding: 0;
+    border: 5;
+    border-color:	@background-color;
+}
+message {
+    border: 3;
+    padding: 1em;
+    background-color: @background;
+    text-color: @blue;
+}
+textbox normal {
+    text-color: @blue;
+    padding: 0;
+}
+listview {
+    reverse: false;
+    fixed-height: true;
+    border: 2;
+    padding: 10;
+    columns: 1;
+    text-color: @blue;
+    background-color: @background;
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    padding: 4 0 4 8;
+    highlight: bold underline #475e5d;
+}
+element selected {
+    border: 1;
+    border-color:	@blue;
+    text-color: @blue;
+    background-color: @background;
+}
+scrollbar {
+    border: 0;
+    padding: 0;
+}
+inputbar {
+    spacing: 0;
+    border: 2;
+    padding: 10 10 10 18;
+    text-color: @foreground;
+    background-color: @background;
+    index: 0;
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+inputbar normal {
+    text-color: @foreground;
+    background-color: @background;
+}
+
+mode-switcher {
+    border: 2;
+    padding: 10 20;
+    text-color: @foreground;
+    background-color: @background;
+    index: 10;
+}
+button {
+    text-color: @light-foreground;
+    background-color: @background;
+    font: "FontAwesome 17";
+}
+button selected {
+    text-color: @foreground;
+    background-color: @background;
+}
+prompt {
+    spacing:    0;
+    background-color: @background;
+    text-color: @foreground;
+}
+textbox-prompt-colon {
+    expand:     false;
+    margin:     0 1em 0 0;
+    text-color: @foreground;
+}
+entry {
+    spacing: 0;
+    text-color: @foreground;
+    background-color: @background;
+    font: "Iosevka Nerd Font Bold 12";
+}
+case-indicator {
+    spacing:    0;
+    text-color: @foreground;
+    background-color: @background;
+}
+
+error-message {
+    border: 2;
+    padding: 1em;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+// vim: ft=css

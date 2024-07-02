@@ -21,13 +21,16 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 * **Locker:**  i3lock-color
 
 
-* **Emulator:** termite 
+* **Emulator:** termite
+* 
+
+* **Menu:** rofi 
 
 
-* **Notify**: dunst 
+* **Notify:** dunst 
 
 
-* **Running:** sys-info-full,moc
+* **Running:** sys-info-full, moc
 
 
 # Screenshots
@@ -42,7 +45,11 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 
 ![](Screenshots/Previews/preview-nordic-polybar-i3gaps-lock.jpg)
 
-![](Screenshots/Previews/preview-nordic-polybar-i3gaps-rofi.jpg)
+![](Screenshots/Previews/preview-rofi.jpg)
+
+![](Screenshots/Previews/preview-powermenu.jpg)
+
+![](Screenshots/Previews/preview-rofi-shots.jpg)
 
 
 # All details
@@ -65,23 +72,23 @@ Ja som proste ja. Baba zamilovaná do Archu, kyberpunku, metalu, spevu a Slovens
 | Notification Daemon | [dunst](https://github.com/dunst-project/dunst) |
 | Menu | [rofi](https://github.com/davatorium/rofi) |
 | Power Manager | xfce4-power-manager, [tlp](https://github.com/linrunner/TLP) |
-| Sound | alsa |
+| Sound | pulse |
 | Sound Control | pavucontrol, [qasmixer](https://gitlab.com/sebholt/qastools), alsamixer, amixer |
 | Sound Equalizer | [pulseaudio-equalizer-ladspa](https://github.com/pulseaudio-equalizer-ladspa/equalizer) based on [swh-plugins](https://github.com/swh/ladspa) |
 | Network Manager | connman |
 | Terminal | [alacritty](https://github.com/alacritty/alacritty), [termite](https://github.com/thestinger/termite/) |
-| Terminal Colorscheme | [created by me](https://gitlab.com/lombardo1981/dotfiles/-/blob/master/Artix%20Linux/.config/colors/colorscheme) ([preview](https://gitlab.com/lombardo1981/dotfiles/-/blob/master/Screenshots/colorscheme.png) by [blocks](https://github.com/stark/Color-Scripts/blob/master/color-scripts/bloks) ) |
+| Terminal Colorscheme | [created by me](https://github.com/proste-ja/Dotfiles/blob/master/Arch%20Linux/.config/colors/colorscheme)) ([preview](https://github.com/proste-ja/Dotfiles/blob/master/Screenshots/colorscheme.png)) by [blocks](https://github.com/stark/Color-Scripts/blob/master/color-scripts/bloks)) |
 | Shell | zsh |
-| Shell Theme | [created by me](https://gitlab.com/lombardo1981/dotfiles/-/blob/master/Artix%20Linux/.zsh_prompt) ([preview](https://gitlab.com/lombardo1981/dotfiles/-/blob/master/Screenshots/zsh-prompt.png)) |
-| Powerline Theme | [edited](https://gitlab.com/lombardo1981/dotfiles/-/blob/master/Artix%20Linux/.zsh_powerline) [powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k) ([preview](https://gitlab.com/lombardo1981/dotfiles/-/blob/master/Screenshots/zsh-powerline.png)) |
+| Shell Theme | [created by me](https://github.com/proste-ja/Dotfiles/blob/master/Arch%20Linux/.zsh_prompt)) ([preview](https://github.com/proste-ja/Dotfiles/blob/master/Screenshots/zsh-prompt.png)) |
+| Powerline Theme | [edited](https://github.com/proste-ja/Dotfiles/blob/master/Arch%20Linux/.zsh_powerline) [powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k) ([preview](https://github.com/proste-ja/Dotfiles/blob/master/Screenshots/zsh-powerline.png)) |
 | Screenshot App | scrot, [flameshot](https://github.com/lupoDharkael/flameshot) |
 | System Optimizer | bleachbit |
 | System Monitor | htop |
 | File Manager | pcmanfm, thunar, [ranger](https://github.com/ranger/ranger) |
-| Text Editor | gedit2, nano, vim |
+| Text Editor | gedit, nano, vim |
 | Image Viewer | [viewnior](https://github.com/hellosiyan/Viewnior) |
 | Music Player | [moc](http://moc.daper.net/) |
-| PDF Viewer | evince-light |
+| PDF Viewer | evince |
 | Archiver | file-roller |
 | Office Suite | [WPS Office](https://linux.wps.com/), [OnlyOffice DesktopEditors](https://github.com/ONLYOFFICE/DesktopEditors) |
 | Image Editor | gimp |
